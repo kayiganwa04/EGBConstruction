@@ -30,7 +30,6 @@ const OnGoingProjects: React.FC = () => {
         />
         <Image
           src="/projects/Picture66.jpg"
-          gridColumn={['1 / 2', '2 / 4', 'auto', 'auto', 'auto']}
         />
         <Image
           src="/Projects/Picture69.png"
