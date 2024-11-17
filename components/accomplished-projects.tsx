@@ -4,7 +4,7 @@ import { Flex, Text, Heading, Grid, Image } from '@chakra-ui/core'
 
 const AccomplishedPojects: React.FC = () => {
   return (
-    <Flex flexDirection="column" alignItems="center" mt="24">
+    <Flex flexDirection="column" alignItems="center" mt={['24', '24', '24', '24', '64']}>
       <Heading as="h3" textTransform="uppercase" mb="20px">
         Accomplished Projects
       </Heading>
