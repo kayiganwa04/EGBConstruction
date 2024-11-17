@@ -2,15 +2,14 @@ import React from 'react'
 
 import { Flex, Text, Heading, Grid, Image } from '@chakra-ui/core'
 
-const OurProject: React.FC = () => {
+const AccomplishedPojects: React.FC = () => {
   return (
     <Flex flexDirection="column" alignItems="center" mt="24">
       <Heading as="h3" textTransform="uppercase" mb="20px">
-        Our Projects
+        Accomplished Projects
       </Heading>
       <Text fontSize="16px" mb="32px" maxW="460px" textAlign="center">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry.
+        Our completed projects demonstrate our commitment to quality and client satisfaction. From residential to commercial builds, each project highlights our expertise and dedication to delivering exceptional results.
       </Text>
       <Grid
         gridTemplateColumns="repeat(3, 1fr)"
@@ -58,4 +57,4 @@ const OurProject: React.FC = () => {
   )
 }
 
-export default OurProject
+export default AccomplishedPojects
