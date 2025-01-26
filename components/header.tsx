@@ -25,6 +25,8 @@ const Header: React.FC = () => {
           width="fit-content"
           paddingX={['4px', '12px', '12px', '16px', '24px']}
           paddingY={['4px', '4px', '12px', '12px', '16px']}
+          borderRadius="10px"
+          textAlign="center"
         >
           Entreprise Générale du Bâtiment
         </Heading>

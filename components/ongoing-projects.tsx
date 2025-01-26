@@ -12,44 +12,74 @@ const OnGoingProjects: React.FC = () => {
         Our ongoing projects reflect our commitment to progress and excellence. Each is a testament to our dedication to delivering quality work that meets our clients' evolving needs.
       </Text>
       <Grid
-        gridTemplateColumns="repeat(3, 1fr)"
-        gridGap="26px"
+        gridTemplateColumns={['1fr', '1fr 1fr', 'repeat(3, 1fr)']}
+        gap="26px"
         px={['8', '8', '8', '24', '24']}
+        maxW="1200px"
+        w="100%"
       >
         <Image
           src="/projects/Picture71.jpg"
-          gridColumn={['1 / 2', '1 / 3', 'auto', 'auto', 'auto']}
+          borderRadius="5px"
+          w="100%"
+          h="250px"
+          objectFit="cover"
         />
         <Image
           src="/projects/Picture62.jpg"
-          gridColumn={['1 / 2', '2 / 4', 'auto', 'auto', 'auto']}
+          borderRadius="5px"
+          w="100%"
+          h="250px"
+          objectFit="cover"
         />
         <Image
           src="/projects/Picture63.jpg"
-          gridColumn={['1 / 2', '1 / 3', 'auto', 'auto', 'auto']}
+          borderRadius="5px"
+          w="100%"
+          h="250px"
+          objectFit="cover"
         />
         <Image
           src="/projects/Picture66.jpg"
+          borderRadius="5px"
+          w="100%"
+          h="250px"
+          objectFit="cover"
         />
         <Image
-          src="/Projects/Picture69.png"
-          gridColumn={['1 / 2', '1 / 3', 'auto', 'auto', 'auto']}
+          src="/projects/Picture69.png"
+          borderRadius="5px"
+          w="100%"
+          h="250px"
+          objectFit="cover"
         />
         <Image
-          src="/Projects/Picture70.jpg"
-          gridColumn={['1 / 2', '2 / 4', 'auto', 'auto', 'auto']}
+          src="/projects/Picture70.jpg"
+          borderRadius="5px"
+          w="100%"
+          h="250px"
+          objectFit="cover"
         />
         <Image
           src="/projects/Picture76.png"
-          gridColumn={['1 / 2', '2 / 4', 'auto', 'auto', 'auto']}
+          borderRadius="5px"
+          w="100%"
+          h="250px"
+          objectFit="cover"
         />
         <Image
-          src="/Projects/Picture78.jpg"
-          gridColumn={['1 / 2', '1 / 3', 'auto', 'auto', 'auto']}
+          src="/projects/Picture78.jpg"
+          borderRadius="5px"
+          w="100%"
+          h="250px"
+          objectFit="cover"
         />
         <Image
-          src="/Projects/Picture80.jpg"
-          gridColumn={['1 / 2', '2 / 4', 'auto', 'auto', 'auto']}
+          src="/projects/Picture80.jpg"
+          borderRadius="5px"
+          w="100%"
+          h="250px"
+          objectFit="cover"
         />
       </Grid>
     </Flex>
