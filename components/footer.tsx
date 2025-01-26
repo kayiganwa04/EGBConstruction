@@ -22,18 +22,6 @@ const Footer: React.FC = () => {
         <Text fontSize="sm" mt="4" textAlign="left" lineHeight="22px">
           Our vision is to create modern, first-class interior spaces that not only enhance aesthetics but also improve functionality and user experience. We are dedicated to delivering excellence and sustainability in every project we undertake.
         </Text>
-        <Flex
-          flexDirection="row"
-          justifyContent="space-between"
-          alignItems="center"
-          mt="8"
-        >
-          <Box as={FaFacebookF} size="22px" color="orange.500" mr="12px" />
-          <Box as={FaTwitter} size="22px" color="orange.500" mr="12px" />
-          <Box as={FaGoogle} size="22px" color="orange.500" mr="12px" />
-          <Box as={FaInstagram} size="22px" color="orange.500" mr="12px" />
-          <Box as={FaYoutube} size="22px" color="orange.500" />
-        </Flex>
       </Flex>
 
       <Flex

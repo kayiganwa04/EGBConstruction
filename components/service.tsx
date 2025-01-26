@@ -10,7 +10,7 @@ const Service: React.FC = () => {
         position="absolute"
         top="40%"
         left="5%"
-        src="/projects/Picture24.jpg"
+        src="/projects/villa4.jpg"
         display={['none', 'none', 'none', 'block', 'block']}
         borderColor="white"
         borderWidth="10px"
@@ -71,7 +71,6 @@ const Service: React.FC = () => {
             enhance the lives of our clients and contribute positively to communities
             and the environment.
           </Text>
-
           <Heading
             as="h3"
             fontSize="2xl"

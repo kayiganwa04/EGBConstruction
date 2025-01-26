@@ -12,73 +12,101 @@ const OnGoingProjects: React.FC = () => {
         Our ongoing projects reflect our commitment to progress and excellence. Each is a testament to our dedication to delivering quality work that meets our clients' evolving needs.
       </Text>
       <Grid
-        gridTemplateColumns={['1fr', '1fr 1fr', 'repeat(3, 1fr)']}
+        gridTemplateColumns={['1fr', '1fr', '50% 60%']}
         gap="26px"
         px={['8', '8', '8', '24', '24']}
         maxW="1200px"
         w="100%"
+        gridAutoRows="250px"
       >
+        {/* First Row */}
         <Image
           src="/projects/Picture71.jpg"
           borderRadius="5px"
           w="100%"
-          h="250px"
+          h="100%"
           objectFit="cover"
         />
         <Image
-          src="/projects/Picture62.jpg"
+          src="/projects/residential2.png"
           borderRadius="5px"
           w="100%"
-          h="250px"
+          h="100%"
+          objectFit="cover"
+        />
+        {/* Second Row */}
+        <Image
+          src="/projects/apartment1.png"
+          borderRadius="5px"
+          w="100%"
+          h="100%"
           objectFit="cover"
         />
         <Image
-          src="/projects/Picture63.jpg"
+          src="/projects/apartment2.png"
           borderRadius="5px"
           w="100%"
-          h="250px"
+          h="100%"
+          objectFit="cover"
+        />
+        {/* Third Row */}
+        <Image
+          src="/projects/hospital1.png"
+          borderRadius="5px"
+          w="100%"
+          h="100%"
           objectFit="cover"
         />
         <Image
-          src="/projects/Picture66.jpg"
+          src="/projects/hospital2.png"
           borderRadius="5px"
           w="100%"
-          h="250px"
+          h="100%"
           objectFit="cover"
         />
-        <Image
-          src="/projects/Picture69.png"
-          borderRadius="5px"
-          w="100%"
-          h="250px"
-          objectFit="cover"
-        />
-        <Image
-          src="/projects/Picture70.jpg"
-          borderRadius="5px"
-          w="100%"
-          h="250px"
-          objectFit="cover"
-        />
-        <Image
-          src="/projects/Picture76.png"
-          borderRadius="5px"
-          w="100%"
-          h="250px"
-          objectFit="cover"
-        />
+        {/* Fourth Row */}
         <Image
           src="/projects/Picture78.jpg"
           borderRadius="5px"
           w="100%"
-          h="250px"
+          h="100%"
           objectFit="cover"
         />
         <Image
           src="/projects/Picture80.jpg"
           borderRadius="5px"
           w="100%"
-          h="250px"
+          h="100%"
+          objectFit="cover"
+        />
+        {/* Fifth Row */}
+        <Image
+          src="/projects/residential3.png"
+          borderRadius="5px"
+          w="100%"
+          h="100%"
+          objectFit="cover"
+        />
+        <Image
+          src="/projects/residential4.png"
+          borderRadius="5px"
+          w="100%"
+          h="100%"
+          objectFit="cover"
+        />
+        {/* Sixth Row */}
+        <Image
+          src="/projects/estate1.png"
+          borderRadius="5px"
+          w="100%"
+          h="100%"
+          objectFit="cover"
+        />
+        <Image
+          src="/projects/apartment4.png"
+          borderRadius="5px"
+          w="100%"
+          h="100%"
           objectFit="cover"
         />
       </Grid>

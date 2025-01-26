@@ -37,6 +37,7 @@ const About: React.FC = () => {
         <Image
           src="/projects/Picture26.png"
           display={['none', 'none', 'none', 'block', 'block']}
+          borderRadius="5px"
           width="100%"
         />
       </Box>
