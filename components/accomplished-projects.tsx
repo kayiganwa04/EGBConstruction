@@ -198,6 +198,7 @@ const AccomplishedPojects: React.FC = () => {
           borderRadius="5px"
           objectFit="cover"
           h="300px"
+          w="100%"
         />
         <Image
           src="/projects/villa16.jpg"
