@@ -14,6 +14,15 @@ const MenuItems: React.FC<MenuItem> = ({ children, link }) => (
     display="block"
     fontWeight="medium"
     fontSize="md"
+    color="black"
+    border="4px solid transparent"
+    borderRadius="8px"
+    _hover={{
+      textDecoration: 'none',
+      color: 'white',
+      bg: '#FBA442',
+      borderColor: '#FBA442'
+  }}
   >
     {children}
   </Link>
