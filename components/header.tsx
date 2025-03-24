@@ -3,6 +3,7 @@ import { Flex, Grid, Heading } from '@chakra-ui/core'
 
 const Header: React.FC = () => {
   return (
+    <Box id ="header">
     <Grid
       backgroundImage="url(/projects/Picture32.jpg)"
       backgroundPosition="center"
@@ -44,6 +45,7 @@ const Header: React.FC = () => {
         </Heading>
       </Flex>
     </Grid>
+    </Box>
   )
 }
 

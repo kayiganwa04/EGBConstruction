@@ -3,6 +3,7 @@ import React from 'react'
 import { Flex, Text, Heading, Grid, Image } from '@chakra-ui/core'
 const AccomplishedPojects: React.FC = () => {
   return (
+    <Box id="accomplished">
     <Flex flexDirection="column" alignItems="center" mt={['24', '24', '24', '24', '64']}>
       <Heading as="h3" textTransform="uppercase" mb="20px">
         Accomplished Projects
@@ -209,6 +210,7 @@ const AccomplishedPojects: React.FC = () => {
         />
       </Grid>
     </Flex>
+    </Box>
   )
 }
 

@@ -3,7 +3,7 @@ import { Grid, Text, Flex, Heading, Button, Box, Image } from '@chakra-ui/core'
 
 const Service: React.FC = () => {
   return (
-    <Box position="relative">
+    <Box id="service" position="relative">
       <Image
         width={['0%', '0%', '0%', '40%', '60%']}
         maxW="660px"

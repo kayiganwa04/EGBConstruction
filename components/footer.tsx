@@ -11,6 +11,7 @@ import {
 
 const Footer: React.FC = () => {
   return (
+    <Box id ="footer">
     <Grid as="footer" templateColumns="repeat(6, 1fr)" mt="16" mb="16">
       <Flex
         flexDirection="column"
@@ -55,6 +56,7 @@ const Footer: React.FC = () => {
         <Text>Email: bbouquin.egb@gmail.com</Text>
       </Flex>
     </Grid>
+    </Box>
   )
 }
 

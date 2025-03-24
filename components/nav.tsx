@@ -16,7 +16,7 @@ const MenuItems: React.FC<MenuItem> = ({ children, link }) => (
     fontSize="md"
     color="black"
     border="4px solid transparent"
-    borderRadius="8px"
+    borderRadius="10px"
     _hover={{
       textDecoration: 'none',
       color: 'white',
@@ -77,11 +77,11 @@ const Nav = props => {
         textAlign="center"
         alignItems="center"
       >
-        <MenuItems>Home</MenuItems>
-        <MenuItems>About</MenuItems>
-        <MenuItems>Services</MenuItems>
-        <MenuItems>Gallery</MenuItems>
-        <MenuItems>Contact</MenuItems>
+        <MenuItems onClick={() => scrollToSection("header")}link="#header">Home</MenuItems>
+        <MenuItems onClick={() => scrollToSection("about")}link="#about">About</MenuItems>
+        <MenuItems onClick={() => scrollToSection("service")}link="#service">Services</MenuItems>
+        <MenuItems onClick={() => scrollToSection("accomplished")}link="#accoplished">Gallery</MenuItems>
+        <MenuItems onClick={() => scrollToSection("footer")}link="#footer">Contact</MenuItems>
       </Box>
     </Flex>
   )

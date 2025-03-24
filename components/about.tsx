@@ -4,6 +4,7 @@ import Button from './button'
 
 const About: React.FC = () => {
   return (
+    <Box id="about">
     <Grid templateColumns="repeat(6, 1fr)" marginY="24" alignItems="center">
       <Flex
         flexDirection="column"
@@ -42,6 +43,7 @@ const About: React.FC = () => {
         />
       </Box>
     </Grid>
+    </Box>
   )
 }
 
