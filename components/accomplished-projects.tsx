@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Flex, Text, Heading, Grid, Image } from '@chakra-ui/core'
+import { Flex, Text, Heading, Grid, Image, Box } from '@chakra-ui/core'
 const AccomplishedPojects: React.FC = () => {
   return (
     <Box id="accomplished">

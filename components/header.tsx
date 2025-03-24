@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Grid, Heading } from '@chakra-ui/core'
+import { Flex, Grid, Heading, Box } from '@chakra-ui/core'
 
 const Header: React.FC = () => {
   return (

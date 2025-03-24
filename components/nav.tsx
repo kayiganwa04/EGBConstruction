@@ -32,6 +32,21 @@ const Nav = props => {
   const [show, setShow] = React.useState(false)
   const handleToggle = () => setShow(!show)
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+
+    if (element) {
+      // Get the position of the element relative to the top of the document
+      const topOffset = element.getBoundingClientRect().top + window.pageYOffset;
+
+      // Scroll smoothly to the element position adjusted by the offset
+      window.scrollTo({
+        top: topOffset - 100,  // 100px is the offset (you can adjust this value)
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <Flex
       as="nav"
