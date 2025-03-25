@@ -3,7 +3,9 @@ import { Box, Flex, Link, Button, Stack } from '@chakra-ui/core'
 import Logo from './logo'
 
 interface MenuItem {
-  link?: string
+  link?: string;
+  onClick?: void;
+  childrem?: React.ReactNode;
 }
 
 const MenuItems: React.FC<MenuItem> = ({ children, link }) => (
