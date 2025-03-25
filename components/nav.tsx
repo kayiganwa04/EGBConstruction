@@ -41,7 +41,7 @@ const Nav = props => {
 
       // Scroll smoothly to the element position adjusted by the offset
       window.scrollTo({
-        top: topOffset - 100,  // 100px is the offset (you can adjust this value)
+        top: topOffset - 100,  
         behavior: "smooth"
       });
     }
