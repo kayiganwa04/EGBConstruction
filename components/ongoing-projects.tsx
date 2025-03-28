@@ -1,9 +1,17 @@
 import React from 'react'
 
+<<<<<<< HEAD
 import { Flex, Text, Heading, Grid, Image } from '@chakra-ui/core'
 
 const OnGoingProjects: React.FC = () => {
   return (
+=======
+import { Flex, Text, Heading, Grid, Image, Box } from '@chakra-ui/core'
+
+const OnGoingProjects: React.FC = () => {
+  return (
+    <Box id="Projects">
+>>>>>>> 3676ab9 (first commit)
     <Flex flexDirection="column" alignItems="center" mt="24">
       <Heading as="h3" textTransform="uppercase" mb="20px">
         Under Construction
@@ -111,6 +119,10 @@ const OnGoingProjects: React.FC = () => {
         />
       </Grid>
     </Flex>
+<<<<<<< HEAD
+=======
+    </Box>
+>>>>>>> 3676ab9 (first commit)
   )
 }
 

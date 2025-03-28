@@ -1,12 +1,25 @@
+<<<<<<< HEAD
 import React from 'react'
 import { Box, Flex, Link, Button, Stack } from '@chakra-ui/core'
+=======
+import React, { useRef, useState } from 'react'
+import { Box, Flex, Link } from '@chakra-ui/core'
+>>>>>>> 3676ab9 (first commit)
 import Logo from './logo'
 
 interface MenuItem {
   link?: string
+<<<<<<< HEAD
 }
 
 const MenuItems: React.FC<MenuItem> = ({ children, link }) => (
+=======
+  children?: React.ReactNode
+  onClick?: () => void
+}
+
+const MenuItems: React.FC<MenuItem> = ({ children, link, onClick }) => (
+>>>>>>> 3676ab9 (first commit)
   <Link
     href={link}
     mt={[4, 4, 0, 0]}
@@ -15,6 +28,7 @@ const MenuItems: React.FC<MenuItem> = ({ children, link }) => (
     fontWeight="medium"
     fontSize="md"
     color="black"
+<<<<<<< HEAD
     border="4px solid transparent"
     borderRadius="10px"
     _hover={{
@@ -23,11 +37,27 @@ const MenuItems: React.FC<MenuItem> = ({ children, link }) => (
       bg: '#FBA442',
       borderColor: '#FBA442'
   }}
+=======
+    border="8px solid transparent"
+    borderRadius="9px"
+    paddingX={"10px"}
+    onClick={onClick}
+    _hover={{
+      color: 'white',
+      bg: '#FBA442',
+      borderColor: '#FBA442',
+      transform: "scale(1.1)",
+      transition: "transform 0.2s ease-in-out",
+      fontSize: "md",
+      fontWeight: "bold"
+    }}
+>>>>>>> 3676ab9 (first commit)
   >
     {children}
   </Link>
 )
 
+<<<<<<< HEAD
 const Nav = props => {
   const [show, setShow] = React.useState(false)
   const handleToggle = () => setShow(!show)
@@ -45,6 +75,58 @@ const Nav = props => {
         behavior: "smooth"
       });
     }
+=======
+const Nav = (props) => {
+  const [show, setShow] = React.useState(false)
+  const handleToggle = () => setShow(!show)
+  
+  const scrollAnimationRef = useRef<number | null>(null)
+
+  const smoothScrollToSection = (id: string) => {
+    if (scrollAnimationRef.current !== null) {
+      cancelAnimationFrame(scrollAnimationRef.current)
+    }
+
+    const element = document.getElementById(id.replace('#', ''));
+    
+    if (element) {
+      const navbar = document.querySelector('nav');
+      const navbarHeight = navbar ? navbar.clientHeight : 70;
+
+      const startPosition = window.pageYOffset;
+      const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+      const distance = targetPosition - startPosition;
+      const duration = 600;
+      let startTimestamp: number | null = null;
+
+      const easeInOutQuad = (t: number) => {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      };
+
+      const scrollAnimation = (currentTime: number) => {
+        if (startTimestamp === null) startTimestamp = currentTime;
+        
+        const timeElapsed = currentTime - startTimestamp;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const easedProgress = easeInOutQuad(progress);
+        
+        window.scrollTo(0, startPosition + distance * easedProgress);
+        
+        if (timeElapsed < duration) {
+          scrollAnimationRef.current = requestAnimationFrame(scrollAnimation);
+        } else {
+          scrollAnimationRef.current = null;
+        }
+      };
+
+      scrollAnimationRef.current = requestAnimationFrame(scrollAnimation);
+    }
+  };
+
+  const handleSectionClick = (sectionId: string) => {
+    setShow(false);
+    smoothScrollToSection(sectionId);
+>>>>>>> 3676ab9 (first commit)
   };
 
   return (
@@ -58,7 +140,11 @@ const Nav = props => {
       justify="space-between"
       wrap="wrap"
       paddingX={['1.5em', '1.5em', '1.5em', '15%']}
+<<<<<<< HEAD
       paddingY="1.5em"
+=======
+      paddingY="1em"
+>>>>>>> 3676ab9 (first commit)
       bg="rgba(255,255,255,.8)"
       color="black"
       textTransform="uppercase"
@@ -80,15 +166,23 @@ const Nav = props => {
         </svg>
       </Box>
 
+<<<<<<< HEAD
       <Box
         display={[
           show ? 'block' : 'none',
           show ? 'block' : 'none',
+=======
+      <Flex // Changed from Box to Flex
+        display={[
+          show ? 'flex' : 'none', // Changed to flex
+          show ? 'flex' : 'none', // Changed to flex
+>>>>>>> 3676ab9 (first commit)
           'flex',
           'flex'
         ]}
         width={['full', 'full', 'auto', 'auto']}
         marginTop={['20px', '20px', 'auto', 'auto']}
+<<<<<<< HEAD
         textAlign="center"
         alignItems="center"
       >
@@ -98,8 +192,50 @@ const Nav = props => {
         <MenuItems onClick={() => scrollToSection("accomplished")}link="#accoplished">Gallery</MenuItems>
         <MenuItems onClick={() => scrollToSection("footer")}link="#footer">Contact</MenuItems>
       </Box>
+=======
+        flexDirection={['column', 'column', 'row', 'row']} // Added to control layout
+        textAlign="center"
+        alignItems="center"
+        justifyContent="flex-end" // Align to right side
+      >
+        <MenuItems
+          onClick={() => handleSectionClick("#header")}
+          link="#header"
+        >
+          Home
+        </MenuItems>
+        <MenuItems
+          onClick={() => handleSectionClick("#about")}
+          link="#about"
+        >
+          About
+        </MenuItems>
+        <MenuItems
+          onClick={() => handleSectionClick("#service")}
+          link="#service"
+        >
+          Services
+        </MenuItems>
+        <MenuItems
+          onClick={() => handleSectionClick("#Projects")}
+          link="#Projects"
+        >
+          Projects
+        </MenuItems>
+        <MenuItems
+          onClick={() => handleSectionClick("#footer")}
+          link="#footer"
+        >
+          Contact
+        </MenuItems>
+      </Flex>
+>>>>>>> 3676ab9 (first commit)
     </Flex>
   )
 }
 
+<<<<<<< HEAD
 export default Nav
+=======
+export default Nav
+>>>>>>> 3676ab9 (first commit)

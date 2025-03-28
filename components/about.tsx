@@ -32,7 +32,11 @@ const About: React.FC = () => {
 
           Our technical team includes certified engineers, skilled electricians, plumbers, painters, and interior designers. We uphold values of integrity, professionalism, teamwork, and accountability, aiming to be the preferred choice for engineering and construction services in Rwanda.
         </Text>
+<<<<<<< HEAD
         <Button>Learn More</Button>
+=======
+        {/* <Button>Learn More</Button> */}
+>>>>>>> 3676ab9 (first commit)
       </Flex>
       <Box gridColumn="4 / 7" style={{ borderRadius: "10px" }}>
         <Image

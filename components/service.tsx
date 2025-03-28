@@ -22,6 +22,10 @@ const Service: React.FC = () => {
         backgroundColor="orange.500"
         templateColumns="repeat(12, 1fr)"
         templateRows="repeat(3, 1fr)"
+<<<<<<< HEAD
+=======
+       
+>>>>>>> 3676ab9 (first commit)
       >
         <Flex
           flexDirection="column"

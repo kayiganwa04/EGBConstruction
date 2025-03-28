@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
+=======
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider & next dev",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider & next build",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider & next start"
+>>>>>>> 3676ab9 (first commit)
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",

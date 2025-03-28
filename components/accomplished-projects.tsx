@@ -185,6 +185,10 @@ const AccomplishedPojects: React.FC = () => {
           borderRadius="5px"
           objectFit="cover"
           h="300px"
+<<<<<<< HEAD
+=======
+          w="400px"
+>>>>>>> 3676ab9 (first commit)
         />
         <Image
           src="/projects/villa14.jpeg"

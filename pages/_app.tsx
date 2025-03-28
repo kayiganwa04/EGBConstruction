@@ -16,7 +16,11 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           name="description"
           content="Elevating spaces with professional interior design services focused on modern, first-class solutions. Our team brings expertise in transforming homes into stylish, functional, and inspiring environments."
         />
+<<<<<<< HEAD
         <link rel="icon" href="/favicon.ico" />
+=======
+        <link rel="icon" href="\logo.png" />
+>>>>>>> 3676ab9 (first commit)
       </Head>
       <ThemeContainer>
         <Component {...pageProps} />

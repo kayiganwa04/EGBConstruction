@@ -97,7 +97,11 @@ const DreamHome: React.FC = () => {
         </Flex>
       </Flex>
 
+<<<<<<< HEAD
       <Button>Get In Touch</Button>
+=======
+      {/* <Button>Get In Touch</Button> */}
+>>>>>>> 3676ab9 (first commit)
     </Flex>
   )
 }
