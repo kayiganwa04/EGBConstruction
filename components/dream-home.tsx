@@ -97,7 +97,7 @@ const DreamHome: React.FC = () => {
         </Flex>
   </Flex>
 
-  <Button>Get In Touch</Button>
+  {/* <Button>Get In Touch</Button> */}
 </Flex>
   )
 }

@@ -38,7 +38,7 @@ const Partners: React.FC = () => {
     width="100%"
   />
 </Box>
-<Box>
+{/* <Box>
   <Image
     src="/projects/partner2.png"
     display={['none', 'none', 'none', 'block']}
@@ -46,7 +46,7 @@ const Partners: React.FC = () => {
     maxW="400px"
     width="100%"
   />
-</Box>
+</Box> */}
       </Flex>
     </Flex>
   )
