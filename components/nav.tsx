@@ -1,25 +1,14 @@
-<<<<<<< HEAD
-import React from 'react'
-import { Box, Flex, Link, Button, Stack } from '@chakra-ui/core'
-=======
 import React, { useRef, useState } from 'react'
 import { Box, Flex, Link } from '@chakra-ui/core'
->>>>>>> 3676ab9 (first commit)
 import Logo from './logo'
 
 interface MenuItem {
   link?: string
-<<<<<<< HEAD
-}
-
-const MenuItems: React.FC<MenuItem> = ({ children, link }) => (
-=======
   children?: React.ReactNode
   onClick?: () => void
 }
 
 const MenuItems: React.FC<MenuItem> = ({ children, link, onClick }) => (
->>>>>>> 3676ab9 (first commit)
   <Link
     href={link}
     mt={[4, 4, 0, 0]}
@@ -28,16 +17,6 @@ const MenuItems: React.FC<MenuItem> = ({ children, link, onClick }) => (
     fontWeight="medium"
     fontSize="md"
     color="black"
-<<<<<<< HEAD
-    border="4px solid transparent"
-    borderRadius="10px"
-    _hover={{
-      textDecoration: 'none',
-      color: 'white',
-      bg: '#FBA442',
-      borderColor: '#FBA442'
-  }}
-=======
     border="8px solid transparent"
     borderRadius="9px"
     paddingX={"10px"}
@@ -51,31 +30,11 @@ const MenuItems: React.FC<MenuItem> = ({ children, link, onClick }) => (
       fontSize: "md",
       fontWeight: "bold"
     }}
->>>>>>> 3676ab9 (first commit)
   >
     {children}
   </Link>
 )
 
-<<<<<<< HEAD
-const Nav = props => {
-  const [show, setShow] = React.useState(false)
-  const handleToggle = () => setShow(!show)
-
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-
-    if (element) {
-      // Get the position of the element relative to the top of the document
-      const topOffset = element.getBoundingClientRect().top + window.pageYOffset;
-
-      // Scroll smoothly to the element position adjusted by the offset
-      window.scrollTo({
-        top: topOffset - 100,  
-        behavior: "smooth"
-      });
-    }
-=======
 const Nav = (props) => {
   const [show, setShow] = React.useState(false)
   const handleToggle = () => setShow(!show)
@@ -126,7 +85,6 @@ const Nav = (props) => {
   const handleSectionClick = (sectionId: string) => {
     setShow(false);
     smoothScrollToSection(sectionId);
->>>>>>> 3676ab9 (first commit)
   };
 
   return (
@@ -140,11 +98,7 @@ const Nav = (props) => {
       justify="space-between"
       wrap="wrap"
       paddingX={['1.5em', '1.5em', '1.5em', '15%']}
-<<<<<<< HEAD
-      paddingY="1.5em"
-=======
       paddingY="1em"
->>>>>>> 3676ab9 (first commit)
       bg="rgba(255,255,255,.8)"
       color="black"
       textTransform="uppercase"
@@ -166,37 +120,19 @@ const Nav = (props) => {
         </svg>
       </Box>
 
-<<<<<<< HEAD
-      <Box
-        display={[
-          show ? 'block' : 'none',
-          show ? 'block' : 'none',
-=======
       <Flex // Changed from Box to Flex
         display={[
           show ? 'flex' : 'none', // Changed to flex
           show ? 'flex' : 'none', // Changed to flex
->>>>>>> 3676ab9 (first commit)
           'flex',
           'flex'
         ]}
         width={['full', 'full', 'auto', 'auto']}
         marginTop={['20px', '20px', 'auto', 'auto']}
-<<<<<<< HEAD
-        textAlign="center"
-        alignItems="center"
-      >
-        <MenuItems onClick={() => scrollToSection("header")}link="#header">Home</MenuItems>
-        <MenuItems onClick={() => scrollToSection("about")}link="#about">About</MenuItems>
-        <MenuItems onClick={() => scrollToSection("service")}link="#service">Services</MenuItems>
-        <MenuItems onClick={() => scrollToSection("accomplished")}link="#accoplished">Gallery</MenuItems>
-        <MenuItems onClick={() => scrollToSection("footer")}link="#footer">Contact</MenuItems>
-      </Box>
-=======
         flexDirection={['column', 'column', 'row', 'row']} // Added to control layout
         textAlign="center"
         alignItems="center"
-        justifyContent="flex-end" // Align to right side
+        justifyContent="flex-end" 
       >
         <MenuItems
           onClick={() => handleSectionClick("#header")}
@@ -229,13 +165,8 @@ const Nav = (props) => {
           Contact
         </MenuItems>
       </Flex>
->>>>>>> 3676ab9 (first commit)
     </Flex>
   )
 }
 
-<<<<<<< HEAD
 export default Nav
-=======
-export default Nav
->>>>>>> 3676ab9 (first commit)
