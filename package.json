@@ -3,20 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-<<<<<<< HEAD
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-=======
     "dev": "set NODE_OPTIONS=--openssl-legacy-provider & next dev",
     "build": "set NODE_OPTIONS=--openssl-legacy-provider & next build",
     "start": "set NODE_OPTIONS=--openssl-legacy-provider & next start"
->>>>>>> 3676ab9 (first commit)
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
+    "caniuse-lite": "^1.0.30001707",
     "emotion-theming": "^10.0.27",
     "next": "^10.0.0",
     "react": "^17.0.1",

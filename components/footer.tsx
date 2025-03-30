@@ -1,13 +1,13 @@
 import React from 'react'
 import { Text, Flex, Grid, Box } from '@chakra-ui/core'
 import Logo from './logo'
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaGoogle,
-  FaInstagram,
-  FaYoutube
-} from 'react-icons/fa'
+// import {
+//   FaFacebookF,
+//   FaTwitter,
+//   FaGoogle,
+//   FaInstagram,
+//   FaYoutube
+// } from 'react-icons/fa'
 
 const Footer: React.FC = () => {
   return (

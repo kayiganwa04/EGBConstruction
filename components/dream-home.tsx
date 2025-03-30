@@ -95,14 +95,10 @@ const DreamHome: React.FC = () => {
             <Text fontSize="sm">Providing expert guidance across various engineering disciplines.</Text>
           </Flex>
         </Flex>
-      </Flex>
+  </Flex>
 
-<<<<<<< HEAD
-      <Button>Get In Touch</Button>
-=======
-      {/* <Button>Get In Touch</Button> */}
->>>>>>> 3676ab9 (first commit)
-    </Flex>
+  <Button>Get In Touch</Button>
+</Flex>
   )
 }
 

@@ -31,12 +31,8 @@ const About: React.FC = () => {
           EGB Ltd initially focused on site supervision and house rehabilitation but quickly expanded its services to include the construction of residential homes, luxury apartments, villas, factories, and warehouses. Our expertise spans industrial and residential buildings, office construction, villa and apartment development, civil engineering, landscaping, and architectural design. Additionally, we offer consulting, supervision, and maintenance services, ensuring the longevity and quality of each project.
 
           Our technical team includes certified engineers, skilled electricians, plumbers, painters, and interior designers. We uphold values of integrity, professionalism, teamwork, and accountability, aiming to be the preferred choice for engineering and construction services in Rwanda.
-        </Text>
-<<<<<<< HEAD
-        <Button>Learn More</Button>
-=======
-        {/* <Button>Learn More</Button> */}
->>>>>>> 3676ab9 (first commit)
+</Text>
+<Button>Learn More</Button>
       </Flex>
       <Box gridColumn="4 / 7" style={{ borderRadius: "10px" }}>
         <Image

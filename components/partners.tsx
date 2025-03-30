@@ -34,31 +34,19 @@ const Partners: React.FC = () => {
             src="/projects/partner1.png"
             display={['none', 'none', 'none', 'block']}
             borderRadius="5px"
-<<<<<<< HEAD
-            maxW="400px"
-            width="100%"
-          />
-        </Box>
-        <Box>
-=======
-            maxW="600px"
-            width="100%"
-          />
-        </Box>
-        {/* <Box>
->>>>>>> 3676ab9 (first commit)
-          <Image
-            src="/projects/partner2.png"
-            display={['none', 'none', 'none', 'block']}
-            borderRadius="5px"
-            maxW="400px"
-            width="100%"
-          />
-<<<<<<< HEAD
-        </Box>
-=======
-        </Box> */}
->>>>>>> 3676ab9 (first commit)
+    maxW="400px"
+    width="100%"
+  />
+</Box>
+<Box>
+  <Image
+    src="/projects/partner2.png"
+    display={['none', 'none', 'none', 'block']}
+    borderRadius="5px"
+    maxW="400px"
+    width="100%"
+  />
+</Box>
       </Flex>
     </Flex>
   )
