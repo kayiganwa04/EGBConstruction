@@ -18,29 +18,29 @@ const AccomplishedPojects: React.FC = () => {
         px={['8', '8', '8', '24', '24']}
         maxW="1400px"
       >
-        <Image
+        {/* <Image
           src="/projects/Picture26.png"
           gridColumn={['1', '1', '1']}
           borderRadius="5px"
           objectFit="cover"
-          h="300px"
-        />
-        <Image
+          h="300px" 
+        />*/}
+        {/* <Image
           src="/projects/Picture12.jpg"
           gridColumn={['1', '1', '2']}
           borderRadius="5px"
           objectFit="cover"
           h="300px"
-        />
-        <Image
+        /> */}
+        {/* <Image
           src="/projects/Picture17.jpg"
           gridColumn={['1', '1', '3']}
           borderRadius="5px"
           objectFit="cover"
           h="300px"
-        />
+        /> */}
         <Image
-          src="/projects/Picture1.jpg"
+          src="/projects/Picture12.jpg"
           gridColumn={['1', '1', '1']}
           borderRadius="5px"
           objectFit="cover"
@@ -82,27 +82,6 @@ const AccomplishedPojects: React.FC = () => {
           h="300px"
         />
         <Image
-          src="/projects/restaurant1.jpg"
-          gridColumn={['1', '1', '1']}
-          borderRadius="5px"
-          objectFit="cover"
-          h="300px"
-        />
-        <Image
-          src="/projects/restaurant2.jpg"
-          gridColumn={['1', '1', '2']}
-          borderRadius="5px"
-          objectFit="cover"
-          h="300px"
-        />
-        <Image
-          src="/projects/interior1.jpeg"
-          gridColumn={['1', '1', '3']}
-          borderRadius="5px"
-          objectFit="cover"
-          h="300px"
-        />
-        <Image
           src="/projects/restaurant4.jpg"
           gridColumn={['1', '1', '1']}
           borderRadius="5px"
@@ -117,7 +96,7 @@ const AccomplishedPojects: React.FC = () => {
           h="300px"
         />
         <Image
-          src="/projects/villa2.jpg"
+          src="/projects/interior1.jpeg"
           gridColumn={['1', '1', '3']}
           borderRadius="5px"
           objectFit="cover"
@@ -138,7 +117,7 @@ const AccomplishedPojects: React.FC = () => {
           h="300px"
         />
         <Image
-          src="/projects/villa5.jpg"
+          src="/projects/villa2.jpg"
           gridColumn={['1', '1', '3']}
           borderRadius="5px"
           objectFit="cover"
@@ -159,7 +138,7 @@ const AccomplishedPojects: React.FC = () => {
           h="300px"
         />
         <Image
-          src="/projects/villa10.jpg"
+          src="/projects/villa5.jpg"
           gridColumn={['1', '1', '3']}
           borderRadius="5px"
           objectFit="cover"
@@ -173,42 +152,63 @@ const AccomplishedPojects: React.FC = () => {
           h="300px"
         />
         <Image
-          src="/projects/villa12.jpg"
+          src="/projects/villa14.jpeg"
           gridColumn={['1', '1', '2']}
           borderRadius="5px"
           objectFit="cover"
           h="300px"
         />
         <Image
-          src="/projects/villa13.png"
+          src="/projects/villa10.jpg"
           gridColumn={['1', '1', '3']}
           borderRadius="5px"
           objectFit="cover"
           h="300px"
-w="400px"
         />
-        <Image
+        {/* <Image
+          src="/projects/villa11.jpeg"
+          gridColumn={['1', '1', '1']}
+          borderRadius="5px"
+          objectFit="cover"
+          h="300px"
+        /> */}
+        {/* <Image
+          src="/projects/villa16.jpg"
+          gridColumn={['1', '1', '2']}
+          borderRadius="5px"
+          objectFit="cover"
+          h="300px"
+        /> */}
+        {/* <Image
+          src="/projects/villa16.jpg"
+          gridColumn={['1', '1', '3']}
+          borderRadius="5px"
+          objectFit="cover"
+          h="300px"
+          w="400px"
+        /> */}
+        {/* <Image
           src="/projects/villa14.jpeg"
           gridColumn={['1', '1', '1']}
           borderRadius="5px"
           objectFit="cover"
           h="300px"
-        />
-        <Image
+        /> */}
+        {/* <Image
           src="/projects/villa15.jpg"
           gridColumn={['1', '1', '2']}
           borderRadius="5px"
           objectFit="cover"
           h="300px"
           w="100%"
-        />
-        <Image
+        /> */}
+        {/* <Image
           src="/projects/villa16.jpg"
           gridColumn={['1', '1', '3']}
           borderRadius="5px"
           objectFit="cover"
           h="300px"
-        />
+        /> */}
       </Grid>
     </Flex>
     </Box>

@@ -19,7 +19,7 @@ const Service: React.FC = () => {
         borderRadius="5px"
       />
       <Grid
-        backgroundColor="orange.500"
+        backgroundColor="blue.500"
         templateColumns="repeat(12, 1fr)"
         templateRows="repeat(3, 1fr)"
       >

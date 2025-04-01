@@ -14,8 +14,10 @@ const OnGoingProjects: React.FC = () => {
         Our ongoing projects reflect our commitment to progress and excellence. Each is a testament to our dedication to delivering quality work that meets our clients' evolving needs.
       </Text>
       <Grid
-        gridTemplateColumns={['1fr', '1fr', '50% 60%']}
+        gridTemplateColumns={['1fr', '1fr', '50% 50%']}
         gap="26px"
+        // marginLeft={['0', '0', '0', '0px']}
+        marginRight={['0', '0', '0', '24px']}
         px={['8', '8', '8', '24', '24']}
         maxW="1200px"
         w="100%"
@@ -45,7 +47,7 @@ const OnGoingProjects: React.FC = () => {
           objectFit="cover"
         />
         <Image
-          src="/projects/apartment2.png"
+          src="/projects/kibagabaga1.jpg"
           borderRadius="5px"
           w="100%"
           h="100%"
@@ -60,7 +62,7 @@ const OnGoingProjects: React.FC = () => {
           objectFit="cover"
         />
         <Image
-          src="/projects/gatunga1.jpeg" //Updated picture Gatunga site
+          src="/projects/gatunga1.jpeg"
           borderRadius="5px"
           w="100%"
           h="100%"
@@ -75,7 +77,7 @@ const OnGoingProjects: React.FC = () => {
           objectFit="cover"
         />
         <Image
-          src="/projects/Busanza.jpg" //Updated picture Busanza
+          src="/projects/Busanza.jpg"
           borderRadius="5px"
           w="100%"
           h="100%"
@@ -90,7 +92,7 @@ const OnGoingProjects: React.FC = () => {
           objectFit="cover"
         />
         <Image
-          src="/projects/residential4.png"
+          src="/projects/rusororo1.jpg"
           borderRadius="5px"
           w="100%"
           h="100%"
@@ -105,7 +107,7 @@ const OnGoingProjects: React.FC = () => {
           objectFit="cover"
         />
         <Image
-          src="/projects/Rebero1.jpeg" //Updated picture Rebero
+          src="/projects/Rebero1.jpeg"
           borderRadius="5px"
           w="100%"
           h="100%"

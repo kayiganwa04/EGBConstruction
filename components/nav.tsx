@@ -23,8 +23,8 @@ const MenuItems: React.FC<MenuItem> = ({ children, link, onClick }) => (
     onClick={onClick}
     _hover={{
       color: 'white',
-      bg: '#FBA442',
-      borderColor: '#FBA442',
+      bg: 'blue.500',
+      borderColor: 'blue.500',
       transform: "scale(1.1)",
       transition: "transform 0.2s ease-in-out",
       fontSize: "md",

@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
         paddingX="8"
         mt={['12', '12', '12', '0', '0']}
       >
-        <Text color="orange.500" fontWeight="bold" fontSize="20px" mb="8px">
+        <Text color="blue.500" fontWeight="bold" fontSize="20px" mb="8px">
           Projects
         </Text>
         <Text mb="6px">Industrial building</Text>
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
         paddingX={['8', '8', '8', '8']}
         mt={['12', '12', '12', '0', '0']}
       >
-        <Text color="orange.500" fontWeight="bold" fontSize="20px" mb="8px">
+        <Text color="blue.500" fontWeight="bold" fontSize="20px" mb="8px">
           Contact Us
         </Text>
         <Text mb="6px">Address: Kicukiro, Kigali</Text>
