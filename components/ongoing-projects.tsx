@@ -60,7 +60,7 @@ const OnGoingProjects: React.FC = () => {
           objectFit="cover"
         />
         <Image
-          src="/projects/hospital2.png"
+          src="/projects/gatunga1.jpeg" //Updated picture Gatunga site
           borderRadius="5px"
           w="100%"
           h="100%"
@@ -75,7 +75,7 @@ const OnGoingProjects: React.FC = () => {
           objectFit="cover"
         />
         <Image
-          src="/projects/Picture80.jpg"
+          src="/projects/Busanza.jpg" //Updated picture Busanza
           borderRadius="5px"
           w="100%"
           h="100%"
@@ -105,7 +105,7 @@ const OnGoingProjects: React.FC = () => {
           objectFit="cover"
         />
         <Image
-          src="/projects/apartment4.png"
+          src="/projects/Rebero1.jpeg" //Updated picture Rebero
           borderRadius="5px"
           w="100%"
           h="100%"

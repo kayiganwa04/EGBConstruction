@@ -96,7 +96,7 @@ const AccomplishedPojects: React.FC = () => {
           h="300px"
         />
         <Image
-          src="/projects/restaurant3.png"
+          src="/projects/interior1.jpeg"
           gridColumn={['1', '1', '3']}
           borderRadius="5px"
           objectFit="cover"
