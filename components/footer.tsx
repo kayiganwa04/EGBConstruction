@@ -12,7 +12,7 @@ import Logo from './logo'
 const Footer: React.FC = () => {
   return (
     <Box id ="footer">
-    <Grid as="footer" templateColumns="repeat(6, 1fr)" mt="16" mb="16">
+    <Grid as="footer" templateColumns="repeat(6, 1fr)" mt="16" mb="16" bg="lightgrey">
       <Flex
         flexDirection="column"
         alignItems="flex-start"
@@ -52,8 +52,9 @@ const Footer: React.FC = () => {
           Contact Us
         </Text>
         <Text mb="6px">Address: Kicukiro, Kigali</Text>
+        <Text>Office: +250 799 36 58 89</Text>
         <Text mb="6px">Phone: +250 788 38 78 40</Text>
-        <Text>Email: bbouquin.egb@gmail.com</Text>
+        <Text whiteSpace="nowrap">Email: bbouquin.egb@gmail.com</Text>
       </Flex>
     </Grid>
     </Box>
