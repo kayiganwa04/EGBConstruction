@@ -11,7 +11,7 @@ import Logo from './logo'
 
 const Footer: React.FC = () => {
   return (
-    <Box id ="footer" bg="lightgrey" color="white" paddingX="16">
+    <Box id ="footer" bg="lightgrey" color="black" paddingY="16">
     <Grid as="footer" templateColumns="repeat(6, 1fr)" mt="16" mb="16" bg="lightgrey" >
       <Flex
         flexDirection="column"
