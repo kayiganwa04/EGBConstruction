@@ -11,8 +11,8 @@ import Logo from './logo'
 
 const Footer: React.FC = () => {
   return (
-    <Box id ="footer">
-    <Grid as="footer" templateColumns="repeat(6, 1fr)" mt="16" mb="16" bg="lightgrey">
+    <Box id ="footer" bg="lightgrey">
+    <Grid as="footer" templateColumns="repeat(6, 1fr)" mt="16" mb="16" bg="lightgrey" >
       <Flex
         flexDirection="column"
         alignItems="flex-start"
