@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
           gridColumn={['1 / 7', '1 / 7', '1 / 7', '1 / 3', '1 / 3']}
         >
           <Logo />
-          <Text fontSize="sm" mt="4" lineHeight="22px" color="black">
+          <Text fontSize="16px" mt="4" lineHeight="22px" color="black">
             Our vision is to create modern, first-class interior spaces that not only enhance aesthetics but also improve functionality and user experience. We are dedicated to delivering excellence and sustainability in every project we undertake.
           </Text>
         </Flex>
