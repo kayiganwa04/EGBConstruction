@@ -67,9 +67,7 @@ const Service: React.FC = () => {
             textAlign="left"
             lineHeight="23px"
           >
-            To innovate and lead in creating sustainable, high-quality spaces that
-            enhance the lives of our clients and contribute positively to communities
-            and the environment.
+            Our vision is to create modern, first-class interior spaces that not only enhance aesthetics but also improve functionality and user experience. We are dedicated to delivering excellence and sustainability in every project we undertake.
           </Text>
           <Heading
             as="h3"
