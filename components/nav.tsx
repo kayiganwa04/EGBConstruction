@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Box, Flex, Link } from '@chakra-ui/core'
 import Logo from './logo'
+import './navStyles.css' // Add this CSS file to your project
 
 interface MenuItem {
   link?: string
@@ -17,19 +18,9 @@ const MenuItems: React.FC<MenuItem> = ({ children, link, onClick }) => (
     fontWeight="medium"
     fontSize="md"
     color="black"
-    border="8px solid transparent"
-    borderRadius="9px"
     paddingX={"10px"}
     onClick={onClick}
-    _hover={{
-      color: 'white',
-      bg: 'blue.500',
-      borderColor: 'blue.500',
-      transform: "scale(1.1)",
-      transition: "transform 0.2s ease-in-out",
-      fontSize: "md",
-      fontWeight: "bold"
-    }}
+    className="hover-underline-link" // Apply our custom CSS class
   >
     {children}
   </Link>
@@ -110,7 +101,7 @@ const Nav = (props) => {
 
       <Box display={['block', 'block', 'none', 'none']} onClick={handleToggle}>
         <svg
-          fill="#FBA442"
+          fill="darkgrey"
           width="22px"
           viewBox="0 0 20 20"
           xmlns="http://www.w3.org/2000/svg"
@@ -120,16 +111,16 @@ const Nav = (props) => {
         </svg>
       </Box>
 
-      <Flex // Changed from Box to Flex
+      <Flex
         display={[
-          show ? 'flex' : 'none', // Changed to flex
-          show ? 'flex' : 'none', // Changed to flex
+          show ? 'flex' : 'none',
+          show ? 'flex' : 'none',
           'flex',
           'flex'
         ]}
         width={['full', 'full', 'auto', 'auto']}
         marginTop={['20px', '20px', 'auto', 'auto']}
-        flexDirection={['column', 'column', 'row', 'row']} // Added to control layout
+        flexDirection={['column', 'column', 'row', 'row']}
         textAlign="center"
         alignItems="center"
         justifyContent="flex-end" 
