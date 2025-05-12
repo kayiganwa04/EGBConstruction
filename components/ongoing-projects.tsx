@@ -47,7 +47,7 @@ const OnGoingProjects: React.FC = () => {
           objectFit="cover"
         />
         <Image
-          src="/projects/kibagabaga2 copy.jpg"
+          src="/projects/KIBAGABAGA_ISANGE_APARTMETNT.jpg"
           borderRadius="5px"
           w="100%"
           h="100%"
