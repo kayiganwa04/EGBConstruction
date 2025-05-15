@@ -1,38 +1,76 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { Box, Flex, Link } from '@chakra-ui/core'
 import Logo from './logo'
-// import './navStyles.css' // Add this CSS file to your project
 
-interface MenuItem {
-  link?: string
-  children?: React.ReactNode
-  onClick?: () => void
+// MenuItems component with hover effects using Chakra UI props
+const MenuItems = ({ children, link, onClick }) => {
+  return (
+    <Link
+      href={link}
+      mt={[4, 4, 0, 0]}
+      mr={'36px'}
+      display="block"
+      fontWeight="medium"
+      fontSize="md"
+      color="black"
+      paddingX={"10px"}
+      onClick={onClick}
+      position="relative"
+      textDecoration="none"
+      outline="none"
+      _hover={{
+        color: "#3182ce", // blue.500 equivalent
+        transform: "scale(1.1)",
+        transition: "transform 0.2s ease-in-out",
+        fontWeight: "bold",
+        textDecoration: "none",
+      }}
+      _focus={{
+        textDecoration: "none",
+        outline: "none",
+        border: "none",
+        boxShadow: "none",
+      }}
+      _active={{
+        textDecoration: "none",
+        outline: "none",
+        border: "none",
+        boxShadow: "none",
+      }}
+      sx={{
+        "&::after": {
+          content: "''",
+          position: "absolute",
+          width: "0",
+          height: "2px",
+          bottom: "0",
+          left: "10px",
+          backgroundColor: "#3182ce", // blue.500 equivalent
+          transition: "width 0.3s ease-in-out",
+        },
+        "&:hover::after": {
+          width: "calc(100% - 20px)",
+        },
+        "&:focus::after": {
+          width: "0",
+        },
+        "&:active::after": {
+          width: "0",
+        }
+      }}
+    >
+      {children}
+    </Link>
+  )
 }
-
-const MenuItems: React.FC<MenuItem> = ({ children, link, onClick }) => (
-  <Link
-    href={link}
-    mt={[4, 4, 0, 0]}
-    mr={'36px'}
-    display="block"
-    fontWeight="medium"
-    fontSize="md"
-    color="black"
-    paddingX={"10px"}
-    onClick={onClick}
-    className="hover-underline-link" // Apply our custom CSS class
-  >
-    {children}
-  </Link>
-)
 
 const Nav = (props) => {
   const [show, setShow] = React.useState(false)
   const handleToggle = () => setShow(!show)
   
-  const scrollAnimationRef = useRef<number | null>(null)
+  const scrollAnimationRef = useRef(null)
 
-  const smoothScrollToSection = (id: string) => {
+  const smoothScrollToSection = (id) => {
     if (scrollAnimationRef.current !== null) {
       cancelAnimationFrame(scrollAnimationRef.current)
     }
@@ -47,13 +85,13 @@ const Nav = (props) => {
       const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
       const distance = targetPosition - startPosition;
       const duration = 600;
-      let startTimestamp: number | null = null;
+      let startTimestamp = null;
 
-      const easeInOutQuad = (t: number) => {
+      const easeInOutQuad = (t) => {
         return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
       };
 
-      const scrollAnimation = (currentTime: number) => {
+      const scrollAnimation = (currentTime) => {
         if (startTimestamp === null) startTimestamp = currentTime;
         
         const timeElapsed = currentTime - startTimestamp;
@@ -73,7 +111,7 @@ const Nav = (props) => {
     }
   };
 
-  const handleSectionClick = (sectionId: string) => {
+  const handleSectionClick = (sectionId) => {
     setShow(false);
     smoothScrollToSection(sectionId);
   };
