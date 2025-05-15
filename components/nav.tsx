@@ -36,6 +36,7 @@ const MenuItems = ({ children, link, onClick }) => {
         border: "none",
         boxShadow: "none",
       }}
+
       sx={{
         "&::after": {
           content: "''",
@@ -62,6 +63,7 @@ const MenuItems = ({ children, link, onClick }) => {
     </Link>
   )
 }
+
 const Nav = (props) => {
   const [show, setShow] = React.useState(false)
   const handleToggle = () => setShow(!show)
