@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { Box, Flex, Link } from '@chakra-ui/core'
 import Logo from './logo'
 
-// MenuItems component with hover effects using Chakra UI props
+
 const MenuItems = ({ children, link, onClick }) => {
   return (
     <Link
@@ -19,7 +19,7 @@ const MenuItems = ({ children, link, onClick }) => {
       textDecoration="none"
       outline="none"
       _hover={{
-        color: "#3182ce", // blue.500 equivalent
+        color: "#3182ce", 
         transform: "scale(1.1)",
         transition: "transform 0.2s ease-in-out",
         fontWeight: "bold",
@@ -45,7 +45,7 @@ const MenuItems = ({ children, link, onClick }) => {
           height: "2px",
           bottom: "0",
           left: "10px",
-          backgroundColor: "#3182ce", // blue.500 equivalent
+          backgroundColor: "#3182ce", 
           transition: "width 0.3s ease-in-out",
         },
         "&:hover::after": {
