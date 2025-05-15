@@ -2,7 +2,6 @@ import React, { useRef } from 'react'
 import { Box, Flex, Link } from '@chakra-ui/core'
 import Logo from './logo'
 
-
 const MenuItems = ({ children, link, onClick }) => {
   return (
     <Link
