@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Box, Flex, Link } from '@chakra-ui/core'
 import Logo from './logo'
-import './navStyles.css' // Add this CSS file to your project
+// import './navStyles.css' // Add this CSS file to your project
 
 interface MenuItem {
   link?: string
