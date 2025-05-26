@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import { jsx, css } from '@emotion/core'
 import { Box, Flex, Link } from '@chakra-ui/core'
 import Logo from './logo'
 
@@ -17,7 +18,7 @@ const MenuItems = ({ children, link, onClick }) => {
       position="relative"
       textDecoration="none"
       outline="none"
-      css={{
+      css={({
         '&::after': {
           content: "''",
           position: 'absolute',
@@ -50,7 +51,7 @@ const MenuItems = ({ children, link, onClick }) => {
           border: 'none',
           boxShadow: 'none',
         }
-      }}
+      })}
     >
       {children}
     </Link>
