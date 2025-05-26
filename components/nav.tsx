@@ -17,45 +17,38 @@ const MenuItems = ({ children, link, onClick }) => {
       position="relative"
       textDecoration="none"
       outline="none"
-      _hover={{
-        color: "#3182ce", 
-        transform: "scale(1.1)",
-        transition: "transform 0.2s ease-in-out",
-        fontWeight: "bold",
-        textDecoration: "none",
-      }}
-      _focus={{
-        textDecoration: "none",
-        outline: "none",
-        border: "none",
-        boxShadow: "none",
-      }}
-      _active={{
-        textDecoration: "none",
-        outline: "none",
-        border: "none",
-        boxShadow: "none",
-      }}
-
-      sx={{
-        "&::after": {
+      css={{
+        '&::after': {
           content: "''",
-          position: "absolute",
-          width: "0",
-          height: "2px",
-          bottom: "0",
-          left: "10px",
-          backgroundColor: "#3182ce", 
-          transition: "width 0.3s ease-in-out",
+          position: 'absolute',
+          width: '0',
+          height: '2px',
+          bottom: '0',
+          left: '10px',
+          backgroundColor: '#3182ce',
+          transition: 'width 0.3s ease-in-out',
         },
-        "&:hover::after": {
-          width: "calc(100% - 20px)",
+        '&:hover::after': {
+          width: 'calc(100% - 20px)',
         },
-        "&:focus::after": {
-          width: "0",
+        '&:hover': {
+          color: '#3182ce',
+          transform: 'scale(1.1)',
+          transition: 'all 0.2s ease-in-out',
+          fontWeight: 'bold',
+          textDecoration: 'none',
         },
-        "&:active::after": {
-          width: "0",
+        '&:focus': {
+          textDecoration: 'none',
+          outline: 'none',
+          border: 'none',
+          boxShadow: 'none',
+        },
+        '&:active': {
+          textDecoration: 'none',
+          outline: 'none',
+          border: 'none',
+          boxShadow: 'none',
         }
       }}
     >
@@ -197,4 +190,5 @@ const Nav = (props) => {
     </Flex>
   )
 }
+
 export default Nav
