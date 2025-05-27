@@ -1,3 +1,4 @@
+// At the top (your current imports are fine)
 import React from 'react';
 import { Text, Flex, Grid, Box } from '@chakra-ui/core';
 import { Divider } from '@chakra-ui/core';
@@ -61,18 +62,18 @@ const Footer: React.FC = () => {
           </Flex>
 
           {/* Embedded Map */}
-          <Box
-            as="iframe"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.437477026791!2d30.099927210386262!3d-1.9794661367679396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca7d1987f32a9%3A0xabf5afe74d060258!2sEGB%20construction!5e0!3m2!1sen!2srw!4v1748335400812!5m2!1sen!2srw"  
-            width="100%"
-            height="300"
-            border="0"
-            loading="fast"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-            borderRadius="md"
-            boxShadow="md"
-          />
+          <Box width="100%" height="200px">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1457.38165971484!2d30.10224694799836!3d-1.9792454168194091!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca7d1987f32a9%3A0xabf5afe74d060258!2sEGB%20construction!5e0!3m2!1sen!2srw!4v1748336426785!5m2!1sen!2srw" 
+              width="100%"
+              height="90%"
+              style={{ border: 0, borderRadius: '8px' }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </Box>
+
         </Grid>
       </Grid>
 
