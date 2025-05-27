@@ -65,8 +65,8 @@ const Footer: React.FC = () => {
           <Box width="100%" height="200px">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1457.38165971484!2d30.10224694799836!3d-1.9792454168194091!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca7d1987f32a9%3A0xabf5afe74d060258!2sEGB%20construction!5e0!3m2!1sen!2srw!4v1748336426785!5m2!1sen!2srw" 
-              width="100%"
-              height="90%"
+              width="120%"
+              height="110%"
               style={{ border: 0, borderRadius: '8px' }}
               loading="lazy"
               allowFullScreen
