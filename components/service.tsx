@@ -1,14 +1,46 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Grid, Text, Flex, Heading, Button, Box, Image } from '@chakra-ui/core'
 
 const Service: React.FC = () => {
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsAnimating(true);
+          setHasAnimated(true);
+        } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+          // Only reset when scrolling up (top of section is above viewport)
+          setIsAnimating(false);
+          setHasAnimated(false);
+        }
+      },
+      {
+        threshold: 0.1
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <Box id="service" position="relative">
+    <Box id="service" position="relative" ref={sectionRef}>
       <Image
         width={['0%', '0%', '0%', '40%', '60%']}
         maxW="660px"
         position="absolute"
-        top="40%"
+        top="25%"
         left="5%"
         src="/projects/villa4.jpg"
         display={['none', 'none', 'none', 'block', 'block']}
@@ -17,6 +49,13 @@ const Service: React.FC = () => {
         borderStyle="solid"
         boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
         borderRadius="5px"
+        style={{
+          transition: "all 0.9s ease-in-out",
+          transform: isAnimating ? "translateY(0)" : "translateY(200%)",
+          opacity: isAnimating ? 1 : 0,
+          visibility: "visible",
+          willChange: "transform, opacity"
+        }}
       />
       <Grid
         backgroundColor="blue.500"
