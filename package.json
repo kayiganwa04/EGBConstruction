@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
-    "start": "NODE_OPTIONS=--openssl-legacy-provider next start"
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider next dev",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider next build",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider next start"
   },
-  
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "10.0.28",
