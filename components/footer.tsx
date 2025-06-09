@@ -1,4 +1,3 @@
-// At the top (your current imports are fine)
 import React from 'react';
 import { Text, Flex, Grid, Box } from '@chakra-ui/core';
 import { Divider } from '@chakra-ui/core';

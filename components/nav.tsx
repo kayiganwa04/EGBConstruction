@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { jsx, css } from '@emotion/core'
 import { Box, Flex, Link } from '@chakra-ui/core'
 import Logo from './logo'
+import { useRouter } from 'next/router'
 
 const MenuItems = ({ children, link, onClick }) => {
   return (
@@ -61,10 +62,17 @@ const MenuItems = ({ children, link, onClick }) => {
 const Nav = (props) => {
   const [show, setShow] = React.useState(false)
   const handleToggle = () => setShow(!show)
+  const router = useRouter()
   
   const scrollAnimationRef = useRef(null)
 
   const smoothScrollToSection = (id) => {
+    if (id.startsWith('/')) {
+      router.push(id)
+      setShow(false)
+      return
+    }
+
     if (scrollAnimationRef.current !== null) {
       cancelAnimationFrame(scrollAnimationRef.current)
     }
@@ -122,9 +130,10 @@ const Nav = (props) => {
       wrap="wrap"
       paddingX={['1.5em', '1.5em', '1.5em', '15%']}
       paddingY="1em"
-      bg="rgba(255,255,255,.8)"
+      bg="rgba(255,255,255,.95)"
       color="black"
       textTransform="uppercase"
+      boxShadow="0 2px 4px rgba(0,0,0,0.1)"
       {...props}
     >
       <Flex align="center" mr={5}>
@@ -159,31 +168,31 @@ const Nav = (props) => {
       >
         <MenuItems
           onClick={() => handleSectionClick("#header")}
-          link="#header"
+          link="#/header"
         >
           Home
         </MenuItems>
         <MenuItems
           onClick={() => handleSectionClick("#about")}
-          link="#about"
+          link="#/about"
         >
           About
         </MenuItems>
         <MenuItems
           onClick={() => handleSectionClick("#service")}
-          link="#service"
+          link="#/service"
         >
           Services
         </MenuItems>
         <MenuItems
-          onClick={() => handleSectionClick("#Projects")}
-          link="#Projects"
+          onClick={() => handleSectionClick("#accomplished")}
+          link="#/accomplished"
         >
           Projects
         </MenuItems>
         <MenuItems
           onClick={() => handleSectionClick("#footer")}
-          link="#footer"
+          link="#/footer"
         >
           Contact
         </MenuItems>
