@@ -10,8 +10,8 @@
   
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
-    "@emotion/core": "10.0.28",
-    "@emotion/styled": "10.0.27",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "caniuse-lite": "^1.0.30001707",
     "emotion-theming": "^10.0.27",
     "next": "^10.0.0",
