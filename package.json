@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
-    "start": "NODE_OPTIONS=--openssl-legacy-provider next start"
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider next dev",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider next build",
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider next start"
   },
   "dependencies": {
     "@chakra-ui/core": "0.8.0",
@@ -35,8 +35,5 @@
     "eslint-plugin-standard": "4.0.1",
     "prettier": "2.1.2",
     "typescript": "4.0.3"
-  },
-  "engines": {
-    "node": "16.x"
   }
 }
