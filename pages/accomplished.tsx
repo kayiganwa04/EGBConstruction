@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Box, SimpleGrid, Image, Heading, Text, Flex, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, Button } from '@chakra-ui/core'
 
 const AccomplishedGallery: React.FC = () => {
-  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null)
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
 
   const projects = [
     { src: '/projects/Picture27.jpg', alt: 'Accomplished Project 1' },
@@ -19,25 +20,85 @@ const AccomplishedGallery: React.FC = () => {
     { src: '/projects/Picture55.jpg', alt: 'Accomplished Project 12' },
   ]
 
+  const handleImageClick = (src: string) => {
+    const index = projects.findIndex(project => project.src === src)
+    setCurrentIndex(index)
+    setSelectedImage(src)
+  }
+
   const handlePrevious = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((selectedImageIndex - 1 + projects.length) % projects.length)
-    }
+    const newIndex = (currentIndex - 1 + projects.length) % projects.length
+    setCurrentIndex(newIndex)
+    setSelectedImage(projects[newIndex].src)
   }
 
   const handleNext = () => {
-    if (selectedImageIndex !== null) {
-      setSelectedImageIndex((selectedImageIndex + 1) % projects.length)
-    }
+    const newIndex = (currentIndex + 1) % projects.length
+    setCurrentIndex(newIndex)
+    setSelectedImage(projects[newIndex].src)
   }
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!selectedImage) return;
+
+      if (event.key === 'ArrowLeft') {
+        handlePrevious();
+      } else if (event.key === 'ArrowRight') {
+        handleNext();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedImage, currentIndex]);
 
   return (
     <Box 
-      minH="100vh" 
-      bg="gray.50"
-      backgroundImage="linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%)"
-      pt={20}
+      minH="100vh"
+      bg="linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%)"
     >
+      <Box
+        bg="blue.600"
+        w="100%"
+        py={16}
+        mb={12}
+        mt={-18}
+        pt={20}
+        position="relative"
+        zIndex={1}
+      >
+        <Flex 
+          flexDirection="column" 
+          alignItems="center" 
+          maxW="1400px" 
+          mx="auto" 
+          px={[4, 6, 8, 10]}
+        >
+          <Heading
+            as="h1"
+            textTransform="uppercase"
+            mb={6}
+            fontSize={['2xl', '3xl', '4xl']}
+            textAlign="center"
+            color="white"
+          >
+            Accomplished Projects Gallery
+          </Heading>
+          <Text
+            fontSize={['md', 'lg']}
+            maxW="600px"
+            textAlign="center"
+            color="white"
+            lineHeight="tall"
+          >
+            Our accomplished projects reflect our commitment to progress and excellence. Each is a testament to our dedication to delivering quality work that meets our clients' evolving needs.
+          </Text>
+        </Flex>
+      </Box>
+
       <Flex 
         flexDirection="column" 
         alignItems="center" 
@@ -45,28 +106,9 @@ const AccomplishedGallery: React.FC = () => {
         mx="auto" 
         px={[4, 6, 8, 10]} 
         py={12}
+        position="relative"
+        zIndex={0}
       >
-        <Heading
-          as="h1"
-          textTransform="uppercase"
-          mb={6}
-          fontSize={['2xl', '3xl', '4xl']}
-          textAlign="center"
-          color="gray.800"
-        >
-          Accomplished Projects Gallery
-        </Heading>
-        <Text
-          fontSize={['md', 'lg']}
-          mb={12}
-          maxW="600px"
-          textAlign="center"
-          color="gray.600"
-          lineHeight="tall"
-        >
-          Our completed projects demonstrate our commitment to quality and client satisfaction. From residential to commercial builds, each project highlights our expertise and dedication to delivering exceptional results.
-        </Text>
-
         <SimpleGrid columns={[1, 2, 3]} spacing={8} width="100%">
           {projects.map((project, index) => (
             <Box
@@ -77,7 +119,8 @@ const AccomplishedGallery: React.FC = () => {
               boxShadow="md"
               cursor="pointer"
               transition="all 0.3s ease"
-              onClick={() => setSelectedImageIndex(index)}
+              onClick={() => handleImageClick(project.src)}
+              height="400px"
               css={{
                 '&:hover': {
                   transform: 'translateY(-4px)',
@@ -90,7 +133,7 @@ const AccomplishedGallery: React.FC = () => {
                 alt={project.alt}
                 objectFit="cover"
                 w="100%"
-                h={['250px', '300px', '350px']}
+                h="100%"
                 loading="lazy"
                 transition="transform 0.3s ease"
                 css={{
@@ -123,16 +166,16 @@ const AccomplishedGallery: React.FC = () => {
           ))}
         </SimpleGrid>
 
-        <Modal isOpen={selectedImageIndex !== null} onClose={() => setSelectedImageIndex(null)} size="6xl">
-          <ModalOverlay />
-          <ModalContent position="relative">
-            <ModalCloseButton />
-            <ModalBody p={0}>
-              {selectedImageIndex !== null && (
+        <Modal isOpen={!!selectedImage} onClose={() => setSelectedImage(null)} size="5xl">
+          <ModalOverlay bg="blackAlpha.900" />
+          <ModalContent bg="transparent" boxShadow="none">
+            <ModalCloseButton color="white" zIndex={2} />
+            <ModalBody p={0} position="relative">
+              {selectedImage && (
                 <>
                   <Image
-                    src={projects[selectedImageIndex].src}
-                    alt={projects[selectedImageIndex].alt}
+                    src={selectedImage}
+                    alt="Selected project"
                     w="100%"
                     h="auto"
                     objectFit="contain"
@@ -140,30 +183,40 @@ const AccomplishedGallery: React.FC = () => {
                   <Button
                     aria-label="Previous image"
                     position="absolute"
-                    left="10px"
+                    left="4"
                     top="50%"
                     transform="translateY(-50%)"
                     onClick={handlePrevious}
-                    bg="white"
-                    _hover={{ bg: 'gray.100' }}
+                    bg="gray.600"
+                    color="white"
+                    _hover={{ bg: 'blackAlpha.800' }}
                     size="lg"
+                    fontSize="2xl"
+                    fontWeight="bold"
                     borderRadius="full"
-                    boxShadow="md"
+                    w="50px"
+                    h="50px"
+                    p={1}
                   >
                     ←
                   </Button>
                   <Button
                     aria-label="Next image"
                     position="absolute"
-                    right="10px"
+                    right="4"
                     top="50%"
                     transform="translateY(-50%)"
                     onClick={handleNext}
-                    bg="white"
-                    _hover={{ bg: 'gray.100' }}
+                    bg="blackAlpha.600"
+                    color="white"
+                    _hover={{ bg: 'blackAlpha.800' }}
                     size="lg"
+                    fontSize="2xl"
+                    fontWeight="bold"
                     borderRadius="full"
-                    boxShadow="md"
+                    w="50px"
+                    h="50px"
+                    p={0}
                   >
                     →
                   </Button>

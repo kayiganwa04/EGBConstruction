@@ -5,17 +5,20 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 const CarouselComponent = Carousel as any;
 
-const OngoingProjects: React.FC = () => {
+const AccomplishedProjects: React.FC = () => {
   const router = useRouter()
 
   const projects = [
-    { src: '/projects/Picture71.jpg', alt: 'Ongoing Project 1' },
-    { src: '/projects/Residential2.png', alt: 'Ongoing Project 2' },
-    { src: '/projects/apartment1.png', alt: 'Ongoing Project 3' },
+    { src: '/projects/Picture27.jpg', alt: 'Accomplished Project 1' },
+    { src: '/projects/villa5.jpg', alt: 'Accomplished Project 2' },
+    { src: '/projects/Picture25.jpg', alt: 'Accomplished Project 3' },
+    { src: '/projects/Picture23.jpg', alt: 'Accomplished Project 4' },
+    { src: '/projects/Picture12.jpg', alt: 'Accomplished Project 5' },
+    { src: '/projects/villa3.jpg', alt: 'Accomplished Project 6' },
   ]
 
   return (
-    <Box id="ongoing" py={[12, 16, 20, 24]} bg="gray.50" minH="100vh" display="flex" alignItems="center">
+    <Box id="accomplished" py={[12, 16, 20, 24]} bg="gray.50" minH="100vh" display="flex" alignItems="center">
       <Flex flexDirection="column" alignItems="center" maxW="1400px" mx="auto" px={[4, 6, 8, 10]} width="100%">
         <Heading
           as="h3"
@@ -25,7 +28,7 @@ const OngoingProjects: React.FC = () => {
           textAlign="center"
           color="gray.800"
         >
-          Ongoing Projects
+          Accomplished Projects
         </Heading>
         <Text
           fontSize={['md', 'lg']}
@@ -35,7 +38,7 @@ const OngoingProjects: React.FC = () => {
           color="gray.600"
           lineHeight="tall"
         >
-          Take a look at our current construction projects. We're committed to delivering excellence in every phase of development.
+          Our completed projects demonstrate our commitment to quality and client satisfaction. From residential to commercial builds, each project highlights our expertise and dedication to delivering exceptional results.
         </Text>
 
         <Box width="100%" mb={12}>
@@ -108,7 +111,7 @@ const OngoingProjects: React.FC = () => {
                   boxShadow="md"
                   transition="all 0.3s ease"
                   cursor="pointer"
-                  onClick={() => router.push('/ongoing')}
+                  onClick={() => router.push('/accomplished')}
                   css={{
                     '&:hover': {
                       transform: 'translateY(-4px)',
@@ -151,7 +154,7 @@ const OngoingProjects: React.FC = () => {
         </Box>
 
         <Link
-          onClick={() => router.push('/ongoing')}
+          onClick={() => router.push('/accomplished')}
           px={8}
           py={3}
           bg="blue.500"
@@ -161,19 +164,18 @@ const OngoingProjects: React.FC = () => {
           textTransform="uppercase"
           letterSpacing="wide"
           transition="all 0.2s"
-          css={{
-            '&:hover': {
-              bg: 'blue.600',
-              transform: 'translateY(-2px)',
-              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-            },
+          _hover={{
+            bg: 'blue.600',
+            transform: 'translateY(-2px)',
+            boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+            textDecoration: 'none'
           }}
         >
-          Open Gallery
+          View All Projects
         </Link>
       </Flex>
     </Box>
   )
 }
 
-export default OngoingProjects
+export default AccomplishedProjects

@@ -13,7 +13,7 @@ const Service: React.FC = () => {
           setIsAnimating(true);
           setHasAnimated(true);
         } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
-          // Only reset when scrolling up (top of section is above viewport)
+         
           setIsAnimating(false);
           setHasAnimated(false);
         }
