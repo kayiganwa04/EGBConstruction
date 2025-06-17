@@ -1,9 +1,10 @@
+import React from 'react'
 import { Flex, Text, Heading, Box, Image, Link } from '@chakra-ui/core'
 import { useRouter } from 'next/router'
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 
-const CarouselComponent = Carousel as any;
+const CarouselComponent = Carousel as unknown as React.FC<any>
 
 const AccomplishedProjects: React.FC = () => {
   const router = useRouter()
@@ -18,46 +19,57 @@ const AccomplishedProjects: React.FC = () => {
   ]
 
   return (
-    <Box id="accomplished" py={[12, 16, 20, 24]} bg="gray.50" minH="100vh" display="flex" alignItems="center">
-      <Flex flexDirection="column" alignItems="center" maxW="1400px" mx="auto" px={[4, 6, 8, 10]} width="100%">
+    <Box
+      id="accomplished"
+      py={12}
+      bg="gray.50"
+      minHeight="100vh"
+      display="flex"
+      alignItems="center"
+    >
+      <Flex
+        direction="column"
+        align="center"
+        maxW="1400px"
+        mx="auto"
+        px={6}
+        width="100%"
+      >
         <Heading
           as="h3"
           textTransform="uppercase"
           mb={6}
-          fontSize={['2xl', '3xl', '4xl']}
+          fontSize="3xl"
           textAlign="center"
           color="gray.800"
         >
           Accomplished Projects
         </Heading>
         <Text
-          fontSize={['md', 'lg']}
+          fontSize="lg"
           mb={12}
           maxW="600px"
           textAlign="center"
           color="gray.600"
-          lineHeight="tall"
         >
           Our completed projects demonstrate our commitment to quality and client satisfaction. From residential to commercial builds, each project highlights our expertise and dedication to delivering exceptional results.
         </Text>
 
         <Box width="100%" mb={12}>
           <CarouselComponent
-            showArrows={true}
+            showArrows
             showStatus={false}
             showThumbs={false}
-            infiniteLoop={true}
-            autoPlay={true}
+            infiniteLoop
+            autoPlay
             interval={3000}
-            stopOnHover={true}
-            centerMode={true}
+            stopOnHover
+            centerMode
             centerSlidePercentage={33.33}
-            emulateTouch={true}
-            swipeable={true}
+            emulateTouch
+            swipeable
             dynamicHeight={false}
-            selectedItem={0}
-            showIndicators={true}
-            width="100%"
+            showIndicators
             axis="horizontal"
             renderArrowPrev={(onClickHandler, hasPrev, label) =>
               hasPrev && (
@@ -73,7 +85,7 @@ const AccomplishedProjects: React.FC = () => {
                     border: 'none',
                     padding: '10px',
                     color: 'white',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
                   }}
                 >
                   ‹
@@ -94,7 +106,7 @@ const AccomplishedProjects: React.FC = () => {
                     border: 'none',
                     padding: '10px',
                     color: 'white',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
                   }}
                 >
                   ›
@@ -107,24 +119,28 @@ const AccomplishedProjects: React.FC = () => {
                 <Box
                   position="relative"
                   overflow="hidden"
-                  borderRadius="lg"
+                  borderRadius="8px"
                   boxShadow="md"
-                  transition="all 0.3s ease"
                   cursor="pointer"
                   onClick={() => router.push('/accomplished')}
-                  css={{
-                    '&:hover': {
-                      transform: 'translateY(-4px)',
-                      boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                    },
+                  style={{
+                    transition: 'all 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.boxShadow = '0 10px 15px rgba(0,0,0,0.1)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '';
                   }}
                 >
                   <Image
                     src={project.src}
                     alt={project.alt}
                     objectFit="cover"
-                    w="100%"
-                    h={['250px', '300px', '350px']}
+                    width="100%"
+                    height="300px"
                     loading="lazy"
                   />
                   <Box
@@ -132,18 +148,16 @@ const AccomplishedProjects: React.FC = () => {
                     bottom="0"
                     left="0"
                     right="0"
-                    bg="rgba(0,0,0,0.7)"
+                    background="rgba(0,0,0,0.7)"
                     color="white"
                     p={4}
-                    transform="translateY(100%)"
-                    transition="transform 0.3s ease"
-                    css={{
-                      '&:hover': {
-                        transform: 'translateY(0)',
-                      },
+                    style={{
+                      transform: 'translateY(100%)',
+                      transition: 'transform 0.3s ease',
                     }}
+                    className="project-caption"
                   >
-                    <Text fontSize="sm" fontWeight="medium">
+                    <Text fontSize="sm" fontWeight="bold">
                       {project.alt}
                     </Text>
                   </Box>
@@ -163,12 +177,16 @@ const AccomplishedProjects: React.FC = () => {
           fontWeight="medium"
           textTransform="uppercase"
           letterSpacing="wide"
-          transition="all 0.2s"
-          _hover={{
-            bg: 'blue.600',
-            transform: 'translateY(-2px)',
-            boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-            textDecoration: 'none'
+          style={{ transition: 'all 0.2s ease' }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.boxShadow = '0 10px 15px rgba(0,0,0,0.1)';
+            e.currentTarget.style.background = '#2B6CB0'; // blue.600
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '';
+            e.currentTarget.style.background = '#3182CE'; // blue.500
           }}
         >
           View All Projects
