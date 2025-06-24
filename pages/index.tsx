@@ -11,7 +11,7 @@ import OnGoingProjects from '../components/ongoing-projects'
 import CreativeDirector from '../components/creative-director'
 import { Divider } from '@chakra-ui/core'
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <>
       <Nav />
@@ -29,4 +29,4 @@ const Home: React.FC = () => {
   )
 }
 
-export default Home
+export default Home 

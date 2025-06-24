@@ -1,6 +1,7 @@
 import React from 'react'
 import { Flex, Heading, Image, Text } from '@chakra-ui/core'
 import Button from './button'
+import router from 'next/router'
 
 const DreamHome: React.FC = () => {
   return (
@@ -95,10 +96,10 @@ const DreamHome: React.FC = () => {
             <Text fontSize="sm">Providing expert guidance across various engineering disciplines.</Text>
           </Flex>
         </Flex>
-  </Flex>
+      </Flex>
 
-  {/* <Button>Get In Touch</Button> */}
-</Flex>
+      {/* <Button >Get In Touch</Button> */}
+    </Flex>
   )
 }
 

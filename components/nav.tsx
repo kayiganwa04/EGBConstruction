@@ -4,7 +4,13 @@ import { Box, Flex, Link } from '@chakra-ui/core'
 import Logo from './logo'
 import { useRouter } from 'next/router'
 
-const MenuItems = ({ children, link, onClick }) => {
+interface MenuItemsProps {
+  children: React.ReactNode;
+  link: string;
+  onClick: () => void;
+}
+
+const MenuItems: React.FC<MenuItemsProps> = ({ children, link, onClick }) => {
   return (
     <Link
       href={link}
@@ -59,21 +65,25 @@ const MenuItems = ({ children, link, onClick }) => {
   )
 }
 
-const Nav = (props) => {
+interface NavProps {
+  [key: string]: any;
+}
+
+const Nav: React.FC<NavProps> = (props) => {
   const [show, setShow] = React.useState(false)
   const handleToggle = () => setShow(!show)
   const router = useRouter()
   
-  const scrollAnimationRef = useRef(null)
+  const scrollAnimationRef = useRef<number>(0)
 
-  const smoothScrollToSection = (id) => {
+  const smoothScrollToSection = (id: string) => {
     if (id.startsWith('/')) {
       router.push(id)
       setShow(false)
       return
     }
 
-    if (scrollAnimationRef.current !== null) {
+    if (scrollAnimationRef.current !== 0) {
       cancelAnimationFrame(scrollAnimationRef.current)
     }
 
@@ -87,25 +97,23 @@ const Nav = (props) => {
       const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
       const distance = targetPosition - startPosition;
       const duration = 600;
-      let startTimestamp = null;
+      const startTime = Date.now();
 
-      const easeInOutQuad = (t) => {
+      const easeInOutQuad = (t: number): number => {
         return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
       };
 
-      const scrollAnimation = (currentTime) => {
-        if (startTimestamp === null) startTimestamp = currentTime;
-        
-        const timeElapsed = currentTime - startTimestamp;
-        const progress = Math.min(timeElapsed / duration, 1);
+      const scrollAnimation = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
         const easedProgress = easeInOutQuad(progress);
         
         window.scrollTo(0, startPosition + distance * easedProgress);
         
-        if (timeElapsed < duration) {
+        if (elapsed < duration) {
           scrollAnimationRef.current = requestAnimationFrame(scrollAnimation);
         } else {
-          scrollAnimationRef.current = null;
+          scrollAnimationRef.current = 0;
         }
       };
 
@@ -113,7 +121,7 @@ const Nav = (props) => {
     }
   };
 
-  const handleSectionClick = (sectionId) => {
+  const handleSectionClick = (sectionId: string) => {
     setShow(false);
     smoothScrollToSection(sectionId);
   };
@@ -123,7 +131,7 @@ const Nav = (props) => {
       as="nav"
       position="fixed"
       top="0"
-      zIndex="999"
+      zIndex={999}
       width="100%"
       align="center"
       justify="space-between"
@@ -167,32 +175,32 @@ const Nav = (props) => {
         justifyContent="flex-end" 
       >
         <MenuItems
-          onClick={() => handleSectionClick("#header")}
-          link="#/header"
+          onClick={() => handleSectionClick("header")}
+          link="#header"
         >
           Home
         </MenuItems>
         <MenuItems
-          onClick={() => handleSectionClick("#about")}
-          link="#/about"
+          onClick={() => handleSectionClick("about")}
+          link="#about"
         >
           About
         </MenuItems>
         <MenuItems
-          onClick={() => handleSectionClick("#service")}
-          link="#/service"
+          onClick={() => handleSectionClick("service")}
+          link="#service"
         >
           Services
         </MenuItems>
         <MenuItems
-          onClick={() => handleSectionClick("#accomplished")}
-          link="#/accomplished"
+          onClick={() => handleSectionClick("accomplished")}
+          link="#accomplished"
         >
           Projects
         </MenuItems>
         <MenuItems
-          onClick={() => handleSectionClick("#footer")}
-          link="#/footer"
+          onClick={() => handleSectionClick("footer")}
+          link="#footer"
         >
           Contact
         </MenuItems>
