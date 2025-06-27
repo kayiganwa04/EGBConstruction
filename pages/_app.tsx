@@ -1,7 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
-import { ThemeProvider, CSSReset } from '@chakra-ui/core'
-import theme from '../styles/theme'
+import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
+import { CSSReset } from '@chakra-ui/core'
+import customTheme from '../styles/theme'
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -19,10 +20,10 @@ const MyApp = ({ Component, pageProps }) => {
         <link rel="icon" href="/egb_logo1.png" />
       </Head>
     
-      <ThemeProvider theme={theme}>
+      <EmotionThemeProvider theme={customTheme}>
         <CSSReset />
         <Component {...pageProps} />
-      </ThemeProvider>
+      </EmotionThemeProvider>
     </>
   )
 }
