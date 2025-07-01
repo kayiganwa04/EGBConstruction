@@ -13,10 +13,10 @@ const OngoingGallery: React.FC = () => {
     { src: '/projects/hospital1.png', alt: 'Ongoing Project 5' },
     { src: '/projects/gatunga1.jpeg', alt: 'Ongoing Project 6' },
     { src: '/projects/estate1.png', alt: 'Ongoing Project 7' },
-    { src: '/projects/Rebero1.jpg', alt: 'Ongoing Project 8' },
+    { src: '/projects/Rebero1.jpeg', alt: 'Ongoing Project 8' },
     { src: '/projects/Picture78.jpg', alt: 'Ongoing Project 9' },
     { src: '/projects/Busanza.jpg', alt: 'Ongoing Project 10' },
-    { src: '/projects/Residential3.png', alt: 'Ongoing Project 11' },
+    { src: '/projects/residential3.png', alt: 'Ongoing Project 11' },
     { src: '/projects/rusororo1.jpg', alt: 'Ongoing Project 12' },
   ]
 
