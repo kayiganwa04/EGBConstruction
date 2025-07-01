@@ -7,17 +7,19 @@ import {
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
 import theme from '../../styles/theme'
 
-const ThemeContainer: React.FC = ({ children }) => {
-  return (
-    <ChakraThemeProvider theme={theme}>
-      <ColorModeProvider value="light">
-        <EmotionThemeProvider theme={theme}>
-          <CSSReset />
-          {children}
-        </EmotionThemeProvider>
-      </ColorModeProvider>
-    </ChakraThemeProvider>
-  )
+interface ThemeContainerProps {
+  children: React.ReactNode;
 }
+
+const ThemeContainer: React.FC<ThemeContainerProps> = ({ children }) => (
+  <ChakraThemeProvider theme={theme} {...({} as any)}>
+    <ColorModeProvider value="light">
+      <CSSReset />
+      <EmotionThemeProvider theme={theme}>
+        {children}
+      </EmotionThemeProvider>
+    </ColorModeProvider>
+  </ChakraThemeProvider>
+)
 
 export default ThemeContainer
