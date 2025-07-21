@@ -12,7 +12,7 @@ const OngoingProjects: React.FC = () => {
   const projects = [
     { src: '/projects/estate1.png', alt: 'Ongoing Project 1' },
     { src: '/projects/residential3.png', alt: 'Ongoing Project 2' },
-    { src: '/projects/apartment1.png', alt: 'Ongoing Project 3' },
+    { src: '/projects/Picture71.jpg', alt: 'Ongoing Project 3' },
     { src: '/projects/hospital1.png', alt: 'Ongoing Project 4' },
   ]
 
@@ -37,7 +37,7 @@ const OngoingProjects: React.FC = () => {
           color="gray.600"
           lineHeight="tall"
         >
-          Take a look at our current construction projects. We're committed to delivering excellence in every phase of development.
+          Take a look at our current construction projects. We're committed to ddelivering excellence in every phase of development.
         </Text>
 
         <Box width="100%" mb={12}>
