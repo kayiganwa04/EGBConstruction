@@ -18,6 +18,8 @@ const AccomplishedGallery: React.FC = () => {
     { src: '/projects/interior1.jpeg', alt: 'Accomplished Project 10' },
     { src: '/projects/Picture15.jpg', alt: 'Accomplished Project 11' },
     { src: '/projects/Picture55.jpg', alt: 'Accomplished Project 12' },
+    { src: '/projects/Busanza.jpg', alt: 'Ongoing Project 13' },
+    { src: '/projects/KIBAGABAGA.jpeg', alt: 'Ongoing Project 14' },
   ]
 
   const handleImageClick = (src: string) => {

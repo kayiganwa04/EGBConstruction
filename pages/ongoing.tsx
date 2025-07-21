@@ -8,16 +8,12 @@ const OngoingGallery: React.FC = () => {
   const projects = [
     { src: '/projects/Picture71.jpg', alt: 'Ongoing Project 1' },
     { src: '/projects/Residential2.png', alt: 'Ongoing Project 2' },
-    { src: '/projects/apartment1.png', alt: 'Ongoing Project 3' },
-    { src: '/projects/Kibagabaga.jpg', alt: 'Ongoing Project 4' },
-    { src: '/projects/hospital1.png', alt: 'Ongoing Project 5' },
-    { src: '/projects/gatunga1.JPG', alt: 'Ongoing Project 6' },
-    { src: '/projects/estate1.png', alt: 'Ongoing Project 7' },
-    { src: '/projects/Rebero1.JPG', alt: 'Ongoing Project 8' },
-    { src: '/projects/Busanza1.png', alt: 'Ongoing Project 9' },
-    { src: '/projects/Busanza.jpg', alt: 'Ongoing Project 10' },
-    { src: '/projects/residential3.png', alt: 'Ongoing Project 11' },
-    { src: '/projects/rusororo1.jpg', alt: 'Ongoing Project 12' },
+    { src: '/projects/hospital1.png', alt: 'Ongoing Project 4' },
+    { src: '/projects/gatunga1.JPG', alt: 'Ongoing Project 5' },
+    { src: '/projects/estate1.png', alt: 'Ongoing Project 6' },
+    { src: '/projects/Rebero1.JPG', alt: 'Ongoing Project 7' },
+    { src: '/projects/residential3.png', alt: 'Ongoing Project 9' },
+    { src: '/projects/rusororo1.jpg', alt: 'Ongoing Project 10' },
   ]
 
   const handleImageClick = (src: string) => {
