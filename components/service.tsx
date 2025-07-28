@@ -89,7 +89,7 @@ const Service: React.FC = () => {
             mb="20px"
             alignSelf="flex-start"
           >
-            We Will Create Modern And First Class Intorior.
+            We Will Create Modern And First Class Interior.
           </Heading>
           <Heading
             as="h3"

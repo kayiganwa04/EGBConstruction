@@ -82,7 +82,7 @@ const About: React.FC = () => {
             style={{
               transition: "transform 0.3s ease-in-out"
             }}
-            onMouseOver={(e) => e.currentTarget.style.transform = "scale(1.02)"}
+            onMouseOver={(e) => e.currentTarget.style.transform = "scale(1)"}
             onMouseOut={(e) => e.currentTarget.style.transform = "scale(1)"}
           />
         </Box>
