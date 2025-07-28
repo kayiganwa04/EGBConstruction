@@ -21,6 +21,16 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       <ThemeContainer>
         <Component {...pageProps} />
       </ThemeContainer>
+      <style jsx global>{`
+        html, body {
+          max-width: 100vw;
+          overflow-x: hidden;
+        }
+        #__next {
+          width: 100vw;
+          overflow-x: hidden;
+        }
+      `}</style>
     </>
   )
 }

@@ -40,8 +40,8 @@ const Service: React.FC = () => {
         width={['0%', '0%', '0%', '40%', '60%']}
         maxW="660px"
         position="absolute"
-        top="8%"
-        left="5%"
+        top="4%"
+        left="2%"
         src="/projects/villa4.jpg"
         display={['none', 'none', 'none', 'block', 'block']}
         borderColor="white"

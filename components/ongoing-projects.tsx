@@ -13,7 +13,7 @@ const OngoingProjects: React.FC = () => {
     { src: '/projects/estate1.png', alt: 'Ongoing Project 1' },
     { src: '/projects/residential3.png', alt: 'Ongoing Project 2' },
     { src: '/projects/Picture71.jpg', alt: 'Ongoing Project 3' },
-    { src: '/projects/hospital1.png', alt: 'Ongoing Project 4' },
+    { src: '/projects/hospital1.jpeg', alt: 'Ongoing Project 4' },
   ]
 
   return (
