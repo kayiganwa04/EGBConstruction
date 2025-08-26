@@ -17,18 +17,12 @@ const Header: React.FC = () => {
           bottom: 0;
           background-image: url('/projects/Picture32.jpg');
           background-position: center;
-<<<<<<< HEAD
           background-size: 100% auto;
           background-repeat: no-repeat;
           filter: brightness(0.7);
           z-index: 1;
           // animation: zoom 20s infinite alternate;
           // will-change: transform;
-=======
-          background-size: cover;
-          animation: zoom 20s infinite alternate;
-          will-change: transform;
->>>>>>> dd74f84ad4813328d51f38949cd42aa1b8a680da
         }
       `}</style>
       <Box 
