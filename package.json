@@ -3,9 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "dev": "set NODE_OPTIONS=--openssl-legacy-provider && next dev",
     "build": "set NODE_OPTIONS=--openssl-legacy-provider && next build",
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && next start"
+=======
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider next start"
+>>>>>>> dd74f84ad4813328d51f38949cd42aa1b8a680da
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
