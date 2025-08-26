@@ -71,12 +71,8 @@ const About: React.FC = () => {
             transform: isAnimating ? "translateX(0)" : "translateX(100%)",
             opacity: isAnimating ? 1 : 0,
             visibility: "visible",
-<<<<<<< HEAD
             position: "relative",
             border: "3px solid #000000",
-=======
-            position: "relative"
->>>>>>> dd74f84ad4813328d51f38949cd42aa1b8a680da
           }}
         >
           <Image

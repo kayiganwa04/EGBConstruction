@@ -10,11 +10,7 @@ const Logo: React.FC = () => {
           EGB
         </Text>{' '}
         <Text display="inline" fontWeight="medium">
-<<<<<<< HEAD
           Construction 
-=======
-          Construction
->>>>>>> dd74f84ad4813328d51f38949cd42aa1b8a680da
         </Text>
       </Heading>
     </>
