@@ -18,8 +18,9 @@ const Header: React.FC = () => {
           background-image: url('/projects/Picture32.jpg');
           background-position: center;
           background-size: cover;
-          animation: zoom 20s infinite alternate;
-          will-change: transform;
+          background-repeat: no-repeat;
+          filter: brightness(0.7);
+          z-index: 1;
         }
       `}</style>
       <Box 
