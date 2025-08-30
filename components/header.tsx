@@ -29,6 +29,7 @@ const Header: React.FC = () => {
         height={['0vh', '60vh', '60vh', '70vh']} 
         overflow="hidden"
       >
+        
         <div className="header-background" />
         <Grid
           position="relative"
