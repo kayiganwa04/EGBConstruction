@@ -5,7 +5,7 @@ const Header: React.FC = () => {
   return (
     <>
       <style jsx global>{`
-        @keyframes zoom {
+       @keyframes zoom {
           0% { transform: scale(1); }
           100% { transform: scale(1.1); }
         }
@@ -17,12 +17,10 @@ const Header: React.FC = () => {
           bottom: 0;
           background-image: url('/projects/Picture32.jpg');
           background-position: center;
-          background-size: 100% auto;
+          background-size: cover;
           background-repeat: no-repeat;
           filter: brightness(0.7);
           z-index: 1;
-          // animation: zoom 20s infinite alternate;
-          // will-change: transform;
         }
       `}</style>
       <Box 
