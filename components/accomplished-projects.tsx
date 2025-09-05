@@ -177,7 +177,7 @@ const AccomplishedProjects: React.FC = () => {
           fontWeight="medium"
           textTransform="uppercase"
           letterSpacing="wide"
-          style={{ transition: 'all 0.2s ease' }}
+          style={{ transition: 'all 0.2s ease', textDecoration: 'none' }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-2px)';
             e.currentTarget.style.boxShadow = '0 10px 15px rgba(0,0,0,0.1)';
