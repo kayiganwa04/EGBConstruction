@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { Box, SimpleGrid, Image, Heading, Text, Flex, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, Button } from '@chakra-ui/core'
+import { useRouter } from 'next/router'
 
 const AccomplishedGallery: React.FC = () => {
+  const router = useRouter()
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [currentIndex, setCurrentIndex] = useState<number>(0)
 
@@ -167,6 +169,23 @@ const AccomplishedGallery: React.FC = () => {
             </Box>
           ))}
         </SimpleGrid>
+
+        <Button
+          onClick={() => router.back()}
+          mt={8}
+          px={8}
+          py={3}
+          bg="blue.500"
+          color="white"
+          borderRadius="md"
+          fontWeight="medium"
+          textTransform="uppercase"
+          letterSpacing="wide"
+          transition="all 0.2s"
+          _hover={{ bg: 'blue.600', transform: 'translateY(-2px)', textDecoration: 'none' }}
+        >
+          Previous
+        </Button>
 
         <Modal isOpen={!!selectedImage} onClose={() => setSelectedImage(null)} size="5xl">
           <ModalOverlay bg="blackAlpha.900" />
