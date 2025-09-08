@@ -32,6 +32,7 @@ const AccomplishedProjects: React.FC = () => {
         align="center"
         maxW="1400px"
         mx="auto"
+        paddingTop='50px'
         px={6}
         width="100%"
       >

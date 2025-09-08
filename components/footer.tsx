@@ -5,7 +5,7 @@ import Logo from './logo';
 
 const Footer: React.FC = () => {
   return (
-    <Box id="footer" bg="lightgrey" pt="16" pb="8">
+    <Box id="footer" bg="lightgrey" pt="16" pb="8" px="4">
       <Grid
         as="footer"
         templateColumns="repeat(6, 1fr)"

@@ -17,7 +17,15 @@ const OngoingProjects: React.FC = () => {
   ]
 
   return (
-    <Box id="ongoing" py={[12, 16, 20, 24]} bg="gray.50" minH="100vh" display="flex" alignItems="center">
+    <Box 
+    id="ongoing" 
+    py={[12, 16, 20, 24]} 
+    bg="white" 
+    minH="100vh" 
+    display="flex" 
+    marginTop={-10}
+    mb={-20}
+    alignItems="center">
       <Flex flexDirection="column" alignItems="center" maxW="1400px" mx="auto" px={[4, 6, 8, 10]} width="100%">
         <Heading
           as="h3"
