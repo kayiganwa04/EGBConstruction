@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { jsx, css } from '@emotion/core'
-import { Box, Flex, Link } from '@chakra-ui/core'
+import { Box, Flex, Link, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/core'
 import Logo from './logo'
 import { useRouter } from 'next/router'
 
@@ -184,12 +184,61 @@ const Nav = (props) => {
         >
           Services
         </MenuItems>
-        <MenuItems
-          onClick={() => handleSectionClick("#accomplished")}
-          link="#/accomplished"
-        >
-          Projects
-        </MenuItems>
+        <Menu>
+          <MenuButton
+            as={Link}
+            mt={[4, 4, 0, 0]}
+            mr={'36px'}
+            display="block"
+            fontWeight="medium"
+            fontSize="md"
+            color="black"
+            paddingX={"10px"}
+            position="relative"
+            textDecoration="none"
+            outline="none"
+            css={({
+              '&::after': {
+                content: "''",
+                position: 'absolute',
+                width: '0',
+                height: '2px',
+                bottom: '0',
+                left: '10px',
+                backgroundColor: '#3182ce',
+                transition: 'width 0.3s ease-in-out',
+              },
+              '&:hover::after': {
+                width: 'calc(100% - 20px)',
+              },
+              '&:hover': {
+                color: '#3182ce',
+                transform: 'scale(1.1)',
+                transition: 'all 0.2s ease-in-out',
+                fontWeight: 'bold',
+                textDecoration: 'none',
+              },
+              '&:focus': {
+                textDecoration: 'none',
+                outline: 'none',
+                border: 'none',
+                boxShadow: 'none',
+              },
+              '&:active': {
+                textDecoration: 'none',
+                outline: 'none',
+                border: 'none',
+                boxShadow: 'none',
+              }
+            })}
+          >
+            Projects
+          </MenuButton>
+          <MenuList>
+            <MenuItem onClick={() => handleSectionClick('#accomplished')}>Accomplished</MenuItem>
+            <MenuItem onClick={() => handleSectionClick('#ongoing')}>Ongoing</MenuItem>
+          </MenuList>
+        </Menu>
         <MenuItems
           onClick={() => handleSectionClick("#footer")}
           link="#/footer"
