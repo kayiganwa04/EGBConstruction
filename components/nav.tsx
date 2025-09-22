@@ -48,7 +48,7 @@ const MenuItems = ({ children, link, onClick }) => {
         },
         '&:active': {
           textDecoration: 'none',
-          outline: 'none',
+          outline: 'none', 
           border: 'none',
           boxShadow: 'none',
         }
