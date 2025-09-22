@@ -9,7 +9,7 @@ const OngoingGallery: React.FC = () => {
 
   const projects = [
     { src: '/projects/Picture71.jpg', alt: 'Ongoing Project 1' },
-    { src: '/projects/reberoo.jpg', alt: 'Ongoing Project 2' },
+    { src: '/projects/reberoo.JPG', alt: 'Ongoing Project 2' },
     { src: '/projects/hospital1.jpeg', alt: 'Ongoing Project 4' },
     { src: '/projects/gatunga1.JPG', alt: 'Ongoing Project 5' },
     { src: '/projects/estate1.png', alt: 'Ongoing Project 6' },
