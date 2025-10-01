@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
             <Text mb="6px" color="black">Address: Kicukiro, Kigali</Text>
             <Text mb="6px" color="black">Office: +250 799 36 58 89</Text>
             <Text mb="6px" color="black">Other Phone: +250 788 38 78 40</Text>
-            <Text color="black" whiteSpace="nowrap"><a href="mailto:egbconstruction014@gmail.com">Email: egbconstruction014@gmail.com</a></Text>
+            <Text color="black" whiteSpace="nowrap"><a href="mailto:bbouquin.egb@gmail.com">Email: bbouquin.egb@gmail.com</a></Text>
           </Flex>
 
           {/* Embedded Map */}
