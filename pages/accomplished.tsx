@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Box, SimpleGrid, Image, Heading, Text, Flex, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, Button } from '@chakra-ui/core'
+import { Box, SimpleGrid, Image, Heading, Text, Flex, Modal, ModalOverlay, ModalContent, ModalBody, Button } from '@chakra-ui/core'
 import { useRouter } from 'next/router'
 
 const AccomplishedGallery: React.FC = () => {
@@ -189,15 +189,16 @@ const AccomplishedGallery: React.FC = () => {
 
         <Modal isOpen={!!selectedImage} onClose={() => setSelectedImage(null)} size="5xl">
           <ModalOverlay bg="blackAlpha.900" />
-          <ModalContent bg="transparent" boxShadow="none">
-            <ModalCloseButton color="white" zIndex={2} />
-            <ModalBody p={0} position="relative">
+          <ModalContent bg="transparent" boxShadow="none" display="flex" alignItems="center" justifyContent="center" position="relative">
+            <ModalBody p={0} display="flex" alignItems="center" justifyContent="center" position="relative">
               {selectedImage && (
                 <>
                   <Image
                     src={selectedImage}
                     alt="Selected project"
-                    w="100%"
+                    maxW="90vw"
+                    maxH="80vh"
+                    w="auto"
                     h="auto"
                     objectFit="contain"
                   />
@@ -208,16 +209,12 @@ const AccomplishedGallery: React.FC = () => {
                     top="50%"
                     transform="translateY(-50%)"
                     onClick={handlePrevious}
-                    bg="gray.600"
+                    bg="whiteAlpha.300"
                     color="white"
-                    _hover={{ bg: 'blackAlpha.800' }}
-                    size="lg"
-                    fontSize="2xl"
-                    fontWeight="bold"
+                    _hover={{ bg: 'whiteAlpha.500' }}
                     borderRadius="full"
-                    w="50px"
-                    h="50px"
-                    p={1}
+                    w="44px"
+                    h="44px"
                   >
                     ←
                   </Button>
@@ -228,16 +225,12 @@ const AccomplishedGallery: React.FC = () => {
                     top="50%"
                     transform="translateY(-50%)"
                     onClick={handleNext}
-                    bg="blackAlpha.600"
+                    bg="whiteAlpha.300"
                     color="white"
-                    _hover={{ bg: 'blackAlpha.800' }}
-                    size="lg"
-                    fontSize="2xl"
-                    fontWeight="bold"
+                    _hover={{ bg: 'whiteAlpha.500' }}
                     borderRadius="full"
-                    w="50px"
-                    h="50px"
-                    p={0}
+                    w="44px"
+                    h="44px"
                   >
                     →
                   </Button>

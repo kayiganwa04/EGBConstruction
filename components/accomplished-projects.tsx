@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Flex, Text, Heading, Box, Image, Link } from '@chakra-ui/core'
 import { useRouter } from 'next/router'
 import { Carousel } from 'react-responsive-carousel'
@@ -8,6 +8,24 @@ const CarouselComponent = Carousel as unknown as React.FC<any>
 
 const AccomplishedProjects: React.FC = () => {
   const router = useRouter()
+  const [centerPercentage, setCenterPercentage] = useState<number>(33.33)
+
+  useEffect(() => {
+    const calculatePercentage = () => {
+      const width = window.innerWidth
+      if (width < 640) {
+        setCenterPercentage(100) // 1 slide on small screens
+      } else if (width < 1024) {
+        setCenterPercentage(50) // 2 slides on tablets
+      } else {
+        setCenterPercentage(33.33) // 3 slides on desktops
+      }
+    }
+
+    calculatePercentage()
+    window.addEventListener('resize', calculatePercentage)
+    return () => window.removeEventListener('resize', calculatePercentage)
+  }, [])
 
   const projects = [
     { src: '/projects/Picture27.jpg', alt: 'Accomplished Project 1' },
@@ -66,7 +84,7 @@ const AccomplishedProjects: React.FC = () => {
             interval={3000}
             stopOnHover
             centerMode
-            centerSlidePercentage={33.33}
+            centerSlidePercentage={centerPercentage}
             emulateTouch
             swipeable
             dynamicHeight={false}
