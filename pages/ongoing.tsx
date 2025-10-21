@@ -23,6 +23,7 @@ const OngoingGallery: React.FC = () => {
     setCurrentIndex(index)
     setSelectedImage(src)
   }
+  
 
   const handlePrevious = () => {
     const newIndex = (currentIndex - 1 + projects.length) % projects.length
