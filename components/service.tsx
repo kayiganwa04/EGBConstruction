@@ -13,6 +13,7 @@ const Service: React.FC = () => {
           setIsAnimating(true);
           setHasAnimated(true);
         } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
+         
           setIsAnimating(false);
           setHasAnimated(false);
         }
@@ -88,7 +89,6 @@ const Service: React.FC = () => {
             mb="20px"
             alignSelf="flex-start"
           >
-            We Will Create Modern And First Class Interior.
             We Will Create Modern And First Class Interior.
           </Heading>
           <Heading

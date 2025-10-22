@@ -71,7 +71,8 @@ const About: React.FC = () => {
             transform: isAnimating ? "translateX(0)" : "translateX(100%)",
             opacity: isAnimating ? 1 : 0,
             visibility: "visible",
-            position: "relative"
+            position: "relative",
+            border: "3px solid #000000",
           }}
         >
           <Image
@@ -82,7 +83,7 @@ const About: React.FC = () => {
             style={{
               transition: "transform 0.3s ease-in-out"
             }}
-            onMouseOver={(e) => e.currentTarget.style.transform = "scale(1.02)"}
+            onMouseOver={(e) => e.currentTarget.style.transform = "scale(1)"}
             onMouseOut={(e) => e.currentTarget.style.transform = "scale(1)"}
           />
         </Box>

@@ -132,7 +132,7 @@ const Gallery: React.FC = () => {
             cursor="pointer"
             onClick={() => handleImageClick(image)}
             transition="transform 0.2s"
-          css={{
+            css={{
               '&:hover': {
                 transform: 'scale(1.02)',
               },
