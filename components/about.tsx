@@ -18,7 +18,7 @@ const About: React.FC = () => {
         }
       },
       {
-        threshold: 0.1 // Trigger when 10% of the section is visible
+        threshold: 0.05 // Trigger when 10% of the section is visible
       }
     );
 
@@ -72,13 +72,13 @@ const About: React.FC = () => {
             opacity: isAnimating ? 1 : 0,
             visibility: "visible",
             position: "relative",
-            border: "3px solid #000000",
+            border: "2px solid #222020ff",
           }}
         >
           <Image
             src="/projects/Picture26.png"
             display={['none', 'none', 'none', 'block', 'block']}
-            borderRadius="5px"
+            borderRadius="10px"
             width="100%"
             style={{
               transition: "transform 0.3s ease-in-out"
