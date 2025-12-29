@@ -2,7 +2,9 @@ import React from 'react'
 import { Flex, Text, Heading, Box, Image, Link } from '@chakra-ui/core'
 import { useRouter } from 'next/router'
 import { Carousel } from 'react-responsive-carousel'
+import { useEffect } from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { relative } from 'path'
 
 const CarouselComponent = Carousel as any;
 
@@ -14,16 +16,44 @@ const OngoingProjects: React.FC = () => {
     { src: '/projects/residential3.png', alt: 'Ongoing Project 2' },
     { src: '/projects/Picture71.jpg', alt: 'Ongoing Project 3' },
     { src: '/projects/hospital1.jpeg', alt: 'Ongoing Project 4' },
-    { src: '/projects/Miduha.JPG', alt: 'Ongoing Project 5' },
+  
   ]
+  const [slidesToShow, setSlidesToShow] = React.useState(3)
+  useEffect(() => {
+   const handleResize = () => {
+     if ( window.innerWidth < 768){
+      setSlidesToShow(1)
+     }else setSlidesToShow(3)
+   }
+   handleResize() 
+   window.addEventListener('resize', handleResize)
+
+   return () => window.removeEventListener('resize', handleResize)
+
+  }, [])
 
   return (
-    <Box id="ongoing" py={[12, 16, 20, 24]} bg="gray.50" minH="100vh" display="flex" alignItems="center">
-      <Flex flexDirection="column" alignItems="center" maxW="1400px" mx="auto" px={[4, 6, 8, 10]} width="100%">
+    <Box 
+    id="ongoing" 
+    py={[12, 16, 20, 24]} 
+    bg="white" 
+    maxH="100vmin" 
+    display="flex" 
+    alignItems="center" 
+    style={{ scrollMarginTop: '20px' }}
+    >
+      <Flex 
+      flexDirection="column" 
+      alignItems="center" 
+      maxW="1400px" 
+      mx="auto" 
+      px={[4, 6, 8, 10]} 
+      width="100%" 
+      >
         <Heading
           as="h3"
           textTransform="uppercase"
-          mb={6}
+          mb={3}
           fontSize={['2xl', '3xl', '4xl']}
           textAlign="center"
           color="gray.800"
@@ -51,7 +81,7 @@ const OngoingProjects: React.FC = () => {
             interval={3000}
             stopOnHover={true}
             centerMode={true}
-            centerSlidePercentage={33.33}
+            centerSlidePercentage={slidesToShow === 1 ? 100 : 33.33}
             emulateTouch={true}
             swipeable={true}
             dynamicHeight={false}
@@ -107,7 +137,8 @@ const OngoingProjects: React.FC = () => {
                 <Box
                   position="relative"
                   overflow="hidden"
-                  borderRadius="lg"
+                  borderRadius="md"
+                  height={300}
                   boxShadow="md"
                   transition="all 0.3s ease"
                   cursor="pointer"
@@ -123,8 +154,8 @@ const OngoingProjects: React.FC = () => {
                     src={project.src}
                     alt={project.alt}
                     objectFit="cover"
-                    w="100%"
-                    h={['250px', '300px', '350px']}
+                    width="100%"
+                    height={['250px', '300px', '350px']}
                     loading="lazy"
                   />
                   <Box
@@ -155,7 +186,7 @@ const OngoingProjects: React.FC = () => {
 
         <Link
           onClick={() => router.push('/ongoing')}
-          px={8}
+          px={3}
           py={3}
           bg="blue.500"
           color="white"
@@ -167,6 +198,7 @@ const OngoingProjects: React.FC = () => {
           css={{
             '&:hover': {
               bg: 'blue.600',
+              textDecoration: 'none',
               transform: 'translateY(-2px)',
               boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
             },

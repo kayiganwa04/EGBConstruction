@@ -40,6 +40,7 @@ const AccomplishedProjects: React.FC = () => {
       minH="100vh"
       display="flex"
       alignItems="center"
+      style={{ scrollMarginTop: '90px' }}
     >
       <Flex
         direction="column"
@@ -92,7 +93,7 @@ const AccomplishedProjects: React.FC = () => {
                 <Box
                   position="relative"
                   overflow="hidden"
-                  borderRadius="lg"
+                  borderRadius="md"
                   boxShadow="md"
                   cursor="pointer"
                   onClick={() => router.push('/accomplished')}
@@ -108,6 +109,7 @@ const AccomplishedProjects: React.FC = () => {
                     alt={project.alt}
                     objectFit="cover"
                     width="100%"
+                    maxHeight={300}
                     height={['250px', '300px', '350px']}
                     loading="lazy"
                   />
@@ -136,7 +138,7 @@ const AccomplishedProjects: React.FC = () => {
 
         <Link
           onClick={() => router.push('/accomplished')}
-          px={8}
+          px={3}
           py={3}
           bg="blue.500"
           color="white"
@@ -145,6 +147,7 @@ const AccomplishedProjects: React.FC = () => {
           textTransform="uppercase"
           letterSpacing="wide"
           transition="all 0.2s"
+          mt={-5}
           _hover={{
             bg: 'blue.600',
             transform: 'translateY(-2px)',

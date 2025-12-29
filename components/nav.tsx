@@ -82,9 +82,10 @@ const Nav = (props) => {
     if (element) {
       const navbar = document.querySelector('nav');
       const navbarHeight = navbar ? navbar.clientHeight : 70;
-
+      const computedStyle = window.getComputedStyle(element);
+      const scrollMarginTop = parseFloat(computedStyle.scrollMarginTop) || 0;
       const startPosition = window.pageYOffset;
-      const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+      const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight + scrollMarginTop;
       const distance = targetPosition - startPosition;
       const duration = 600;
       let startTimestamp = null;

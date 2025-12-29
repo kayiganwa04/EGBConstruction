@@ -14,6 +14,7 @@ const OngoingGallery: React.FC = () => {
     { src: '/projects/gatunga1.JPG', alt: 'Ongoing Project 5' },
     { src: '/projects/estate1.png', alt: 'Ongoing Project 6' },
     { src: '/projects/Rebero1.JPG', alt: 'Ongoing Project 7' },
+    { src: '/projects/Miduha.JPG', alt: 'Ongoing Project 8' },
     
   ]
   const handleImageClick = (src: string) => {
