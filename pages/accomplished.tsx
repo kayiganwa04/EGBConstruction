@@ -181,7 +181,7 @@ const AccomplishedGallery: React.FC = () => {
           transition="all 0.2s"
           _hover={{ bg: 'blue.600', transform: 'translateY(-2px)', textDecoration: 'none' }}
         >
-          Back to home
+            Go Back
         </Button>
 
         <Modal isOpen={!!selectedImage} onClose={() => setSelectedImage(null)} size="5xl">

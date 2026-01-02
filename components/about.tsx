@@ -74,6 +74,8 @@ const About: React.FC = () => {
             position: "relative",
             border: "2px solid #222020ff",
             marginRight: "13px",
+            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+            willChange: "transform, opacity"
           }}
         >
           <Image

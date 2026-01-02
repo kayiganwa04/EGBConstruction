@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
       <Box width="100%" px={['8', '8', '8']} mt="4">
         <Divider height="1px" backgroundColor="gray.500" mb="8" />
         <Text textAlign="center" fontSize="sm" color="gray.600">
-          © 2025 EGB Construction. All rights reserved.
+          © 2026 EGB Construction. All rights reserved.
         </Text>
       </Box>
     </Box>

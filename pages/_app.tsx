@@ -2,6 +2,7 @@ import React from 'react'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import ThemeContainer from '../context/theme/ThemeContainer'
+import ScrollToTop from '../components/scroll-to-top'
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -20,6 +21,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       </Head>
       <ThemeContainer>
         <Component {...pageProps} />
+        <ScrollToTop />
       </ThemeContainer>
       <style jsx global>{`
         html, body {

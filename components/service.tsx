@@ -37,10 +37,9 @@ const Service: React.FC = () => {
   return (
     <Box id="service" position="relative" ref={sectionRef}>
       <Image
-        width={['0%', '0%', '0%', '40%', '60%']}
-        maxW="660px"
+        width={['0%', '0%', '0%', '45%', '80%']}
         position="absolute"
-        top="12%"
+        top="8%"
         left="2%"
         src="/projects/villa4.jpg"
         display={['none', 'none', 'none', 'block', 'block']}
