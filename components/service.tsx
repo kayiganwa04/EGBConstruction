@@ -45,10 +45,10 @@ const Service: React.FC = () => {
         src="/projects/villa4.jpg"
         display={['none', 'none', 'none', 'block', 'block']}
         borderColor="white"
-        borderWidth="10px"
+        borderWidth="2px"
         borderStyle="solid"
         boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
-        borderRadius="5px"
+        borderRadius="2px"
         style={{
           transition: "all 0.9s ease-in-out",
           transform: isAnimating ? "translateY(0)" : "translateY(200%)",

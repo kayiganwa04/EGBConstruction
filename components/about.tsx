@@ -66,19 +66,20 @@ const About: React.FC = () => {
         <Box 
           gridColumn="4 / 7" 
           style={{ 
-            borderRadius: "10px",
+            borderRadius: "2px",
             transition: "all 0.8s ease-in-out",
             transform: isAnimating ? "translateX(0)" : "translateX(100%)",
             opacity: isAnimating ? 1 : 0,
             visibility: "visible",
             position: "relative",
             border: "2px solid #222020ff",
+            marginRight: "13px",
           }}
         >
           <Image
             src="/projects/Picture26.png"
             display={['none', 'none', 'none', 'block', 'block']}
-            borderRadius="10px"
+            borderRadius="2px"
             width="100%"
             style={{
               transition: "transform 0.3s ease-in-out"
