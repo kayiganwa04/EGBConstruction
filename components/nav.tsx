@@ -14,45 +14,45 @@ const MenuItems = ({ children, link, onClick }) => {
       fontWeight="medium"
       fontSize="md"
       color="black"
-      paddingX={"10px"}
+      paddingX={"12px"}
+      paddingY={"8px"}
       onClick={onClick}
       position="relative"
       textDecoration="none"
       outline="none"
-      css={({
+      borderRadius="8px"
+      transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      css={{
         '&::after': {
           content: "''",
           position: 'absolute',
           width: '0',
-          height: '2px',
+          height: '3px',
           bottom: '0',
-          left: '10px',
-          backgroundColor: '#3182ce',
-          transition: 'width 0.3s ease-in-out',
+          left: '50%',
+          background: 'linear-gradient(90deg, #4FC3F7, #29B6F6)',
+          borderRadius: '2px',
+          transition: 'width 0.28s cubic-bezier(0.4, 0, 0.2, 1)',
+          transform: 'translateX(-50%)',
         },
         '&:hover::after': {
-          width: 'calc(100% - 20px)',
+          width: '80%',
         },
         '&:hover': {
-          color: '#3182ce',
-          transform: 'scale(1.1)',
-          transition: 'all 0.2s ease-in-out',
-          fontWeight: 'bold',
+          color: '#4FC3F7',
+          fontWeight: 600,
           textDecoration: 'none',
+        },
+        '&:active': {
+          transition: 'all 0.1s ease',
         },
         '&:focus': {
           textDecoration: 'none',
           outline: 'none',
           border: 'none',
           boxShadow: 'none',
-        },
-        '&:active': {
-          textDecoration: 'none',
-          outline: 'none', 
-          border: 'none',
-          boxShadow: 'none',
         }
-      })}
+      }}
     >
       {children}
     </Link>
@@ -130,11 +130,17 @@ const Nav = (props) => {
       justify="space-between"
       wrap="wrap"
       paddingX={['1.5em', '1.5em', '1.5em', '15%']}
-      paddingY="1em"
-      bg="rgba(255,255,255,.95)"
+      paddingY="1.2em"
+      bg="rgba(255, 255, 255, 0.95)"
+      backdropFilter="blur(20px)"
+      borderBottom="1px solid rgba(251, 164, 66, 0.1)"
       color="black"
       textTransform="uppercase"
-      boxShadow="0 2px 4px rgba(0,0,0,0.1)"
+      boxShadow="0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.05)"
+      transition="all 0.3s ease"
+      css={{
+        WebkitBackdropFilter: 'blur(20px)'
+      }}
       {...props}
     >
       <Flex align="center" mr={5}>
@@ -194,44 +200,44 @@ const Nav = (props) => {
             fontWeight="medium"
             fontSize="md"
             color="black"
-            paddingX={"10px"}
+            paddingX={"12px"}
+            paddingY={"8px"}
             position="relative"
             textDecoration="none"
             outline="none"
-            css={({
+            borderRadius="8px"
+            transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+            css={{
               '&::after': {
                 content: "''",
                 position: 'absolute',
                 width: '0',
-                height: '2px',
+                height: '3px',
                 bottom: '0',
-                left: '10px',
-                backgroundColor: '#3182ce',
-                transition: 'width 0.3s ease-in-out',
+                left: '50%',
+                background: 'linear-gradient(90deg, #4FC3F7, #29B6F6)',
+                borderRadius: '2px',
+                transition: 'width 0.28s cubic-bezier(0.4, 0, 0.2, 1)',
+                transform: 'translateX(-50%)',
               },
               '&:hover::after': {
-                width: 'calc(100% - 20px)',
+                width: '80%',
               },
               '&:hover': {
-                color: '#3182ce',
-                transform: 'scale(1.1)',
-                transition: 'all 0.2s ease-in-out',
-                fontWeight: 'bold',
+                color: '#4FC3F7',
+                fontWeight: 600,
                 textDecoration: 'none',
+              },
+              '&:active': {
+                transition: 'all 0.1s ease',
               },
               '&:focus': {
                 textDecoration: 'none',
                 outline: 'none',
                 border: 'none',
                 boxShadow: 'none',
-              },
-              '&:active': {
-                textDecoration: 'none',
-                outline: 'none',
-                border: 'none',
-                boxShadow: 'none',
               }
-            })}
+            }}
           >
             Projects
           </MenuButton>
