@@ -32,12 +32,12 @@ const Partners: React.FC = () => {
         <Box marginRight={["0", "0", "0", "18px"]}>
           <Image
             src="/projects/partner1.png"
-            display={['none', 'none', 'none', 'block']}
+            display={["block", "block", "block", "block"]}
             borderRadius="5px"
-    maxW="400px"
-    width="100%"
-  />
-</Box>
+            maxW={["100%", "400px", "400px", "400px"]}
+            width="100%"
+          />
+        </Box>
 {/* <Box>
   <Image
     src="/projects/partner2.png"
