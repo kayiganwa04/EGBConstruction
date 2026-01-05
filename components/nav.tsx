@@ -242,7 +242,8 @@ const Nav = (props) => {
             Projects
           </MenuButton>
           <MenuList>
-            <MenuItem onClick={() => handleSectionClick('#accomplished')}>Accomplished</MenuItem>
+            <MenuItem onClick={() => handleSectionClick('#accomplished')}>
+            <div className="menu-item">Accomplished</div></MenuItem>
             <MenuItem onClick={() => handleSectionClick('#ongoing')}>Ongoing</MenuItem>
           </MenuList>
         </Menu>

@@ -186,6 +186,7 @@ const OngoingProjects: React.FC = () => {
 
         <Link
           onClick={() => router.push('/ongoing')}
+          display={["none", "none", "inline-flex"]}
           px={3}
           py={3}
           bg="blue.500"

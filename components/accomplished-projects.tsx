@@ -138,6 +138,7 @@ const AccomplishedProjects: React.FC = () => {
 
         <Link
           onClick={() => router.push('/accomplished')}
+          display={["none", "none", "inline-flex"]}
           px={3}
           py={3}
           bg="blue.500"
