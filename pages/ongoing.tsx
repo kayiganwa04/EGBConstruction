@@ -128,6 +128,7 @@ const OngoingGallery: React.FC = () => {
                 src={project.src}
                 alt={project.alt}
                 objectFit="cover"
+                
                 w="100%"
                 h="100%"
                 loading="lazy"
