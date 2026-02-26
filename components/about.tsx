@@ -10,7 +10,7 @@ const About: React.FC = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         // Reset animation state when section goes out of view
-        if (!entry.isIntersecting) {
+        if (entry.isIntersecting == null) {
           setIsAnimating(false);
         } else {
           // Trigger animation when section comes into view
@@ -82,7 +82,7 @@ const About: React.FC = () => {
             src="/projects/Picture26.png"
             display={['none', 'none', 'none', 'block', 'block']}
             borderRadius="2px"
-            width="100%"
+            width="100vi"
             style={{
               transition: "transform 0.3s ease-in-out"
             }}

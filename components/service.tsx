@@ -12,8 +12,7 @@ const Service: React.FC = () => {
         if (entry.isIntersecting) {
           setIsAnimating(true);
           setHasAnimated(true);
-        } else if (!entry.isIntersecting && entry.boundingClientRect.top > 0) {
-         
+        } else if (entry.isIntersecting == null && entry.boundingClientRect.top > 0) {
           setIsAnimating(false);
           setHasAnimated(false);
         }
