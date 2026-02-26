@@ -1,6 +1,5 @@
 import React from 'react'
 import { Flex, Heading, Image, Text } from '@chakra-ui/core'
-import Button from './button'
 
 const DreamHome: React.FC = () => {
   return (
@@ -47,13 +46,6 @@ const DreamHome: React.FC = () => {
           </Flex>
         </Flex>
 
-        <Flex flexDirection="row" alignItems="center" maxW="380px" mb={['8', '8', '8', '0', '0']}>
-          <Image src="/icon/power-icon.png" alt="Power Icon" width="50px" height="50px" mr="18px" />
-          <Flex flexDirection="column" fontSize="xl">
-            <Text fontWeight="bold">Electrical Engineering</Text>
-            <Text fontSize="sm">Safe and efficient power solutions for modern living and industry.</Text>
-          </Flex>
-        </Flex>
       </Flex>
 
       <Flex
@@ -69,14 +61,6 @@ const DreamHome: React.FC = () => {
           <Flex flexDirection="column" fontSize="xl">
             <Text fontWeight="bold">Mechanical Engineering</Text>
             <Text fontSize="sm">Precision-driven mechanical solutions for industrial applications.</Text>
-          </Flex>
-        </Flex>
-
-        <Flex flexDirection="row" alignItems="center" maxW="380px" mb={['8', '8', '8', '0', '0']}>
-          <Image src="/icon/power-icon.png" alt="Power Icon" width="50px" height="50px" mr="18px" />
-          <Flex flexDirection="column" fontSize="xl">
-            <Text fontWeight="bold">Environmental Engineering</Text>
-            <Text fontSize="sm">Sustainable designs to protect and preserve our planet.</Text>
           </Flex>
         </Flex>
 
