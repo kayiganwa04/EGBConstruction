@@ -1,10 +1,10 @@
-import React, { useRef } from 'react'
+import React, { useRef, ReactNode } from 'react'
 import { jsx, css } from '@emotion/core'
 import { Box, Flex, Link, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/core'
 import Logo from './logo'
 import { useRouter } from 'next/router'
 
-const MenuItems = ({ children, link, onClick }) => {
+const MenuItems = ({ children, link, onClick }: { children: ReactNode; link: string; onClick: () => void }) => {
   return (
     <Link
       href={link}
@@ -59,14 +59,18 @@ const MenuItems = ({ children, link, onClick }) => {
   )
 }
 
-const Nav = (props) => {
+interface NavProps {
+  [key: string]: any;
+}
+
+const Nav = (props: NavProps) => {
   const [show, setShow] = React.useState(false)
   const handleToggle = () => setShow(!show)
   const router = useRouter()
   
-  const scrollAnimationRef = useRef(null)
+  const scrollAnimationRef = useRef<number | null>(null)
 
-  const smoothScrollToSection = (id) => {
+  const smoothScrollToSection = (id: string) => {
     if (id.startsWith('/')) {
       router.push(id)
       setShow(false)
@@ -88,13 +92,13 @@ const Nav = (props) => {
       const targetPosition = element.getBoundingClientRect().top + window.pageYOffset - navbarHeight + scrollMarginTop;
       const distance = targetPosition - startPosition;
       const duration = 600;
-      let startTimestamp = null;
+      let startTimestamp: number | null = null;
 
-      const easeInOutQuad = (t) => {
+      const easeInOutQuad = (t: number) => {
         return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
       };
 
-      const scrollAnimation = (currentTime) => {
+      const scrollAnimation = (currentTime: number) => {
         if (startTimestamp === null) startTimestamp = currentTime;
         
         const timeElapsed = currentTime - startTimestamp;
@@ -114,7 +118,7 @@ const Nav = (props) => {
     }
   };
 
-  const handleSectionClick = (sectionId) => {
+  const handleSectionClick = (sectionId: string) => {
     setShow(false);
     smoothScrollToSection(sectionId);
   };
@@ -124,7 +128,7 @@ const Nav = (props) => {
       as="nav"
       position="fixed"
       top="0"
-      zIndex="999"
+      zIndex={999}
       width="100%"
       align="center"
       justify="space-between"
@@ -132,13 +136,13 @@ const Nav = (props) => {
       paddingX={['1.5em', '1.5em', '1.5em', '15%']}
       paddingY="1.2em"
       bg="rgba(255, 255, 255, 0.95)"
-      backdropFilter="blur(20px)"
       borderBottom="1px solid rgba(251, 164, 66, 0.1)"
       color="black"
       textTransform="uppercase"
       boxShadow="0 4px 20px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.05)"
       transition="all 0.3s ease"
       css={{
+        backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)'
       }}
       {...props}
