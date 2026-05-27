@@ -13,18 +13,19 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           rel="stylesheet"
         ></link>
         <title>EGB Construction</title>
-<meta
-  name="description"
-  content="Elevating spaces with professional interior design services focused on modern, first-class solutions. Our team brings expertise in transforming homes into stylish, functional, and inspiring environments."
-/>
-<link rel="icon" href="/egb_logo1.png" />
+        <meta
+          name="description"
+          content="Elevating spaces with professional interior design services focused on modern, first-class solutions. Our team brings expertise in transforming homes into stylish, functional, and inspiring environments."
+        />
+        <link rel="icon" href="/egb_logo1.png" />
       </Head>
       <ThemeContainer>
         <Component {...pageProps} />
         <ScrollToTop />
       </ThemeContainer>
       <style jsx global>{`
-        html, body {
+        html,
+        body {
           max-width: 100vw;
           overflow-x: hidden;
         }

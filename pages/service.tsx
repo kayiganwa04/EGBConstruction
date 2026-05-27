@@ -8,7 +8,7 @@ import Service from '../components/service'
 import Footer from '../components/footer'
 import AccomplishedPojects from '../components/accomplished-projects'
 import OnGoingProjects from '../components/ongoing-projects'
-import { Divider } from '@chakra-ui/core'
+// Divider caused a type error in this build; use a simple hr instead
 
 const ServicePage: React.FC = () => {
   useEffect(() => {
@@ -16,7 +16,8 @@ const ServicePage: React.FC = () => {
     if (el) {
       const navbar = document.querySelector('nav')
       const navbarHeight = navbar ? navbar.clientHeight : 70
-      const targetPosition = el.getBoundingClientRect().top + window.pageYOffset - navbarHeight
+      const targetPosition =
+        el.getBoundingClientRect().top + window.pageYOffset - navbarHeight
       window.scrollTo({ top: targetPosition, behavior: 'smooth' })
     }
   }, [])
@@ -31,7 +32,13 @@ const ServicePage: React.FC = () => {
       <Service />
       <AccomplishedPojects />
       <OnGoingProjects />
-      <Divider mt="24" />
+      <hr
+        style={{
+          marginTop: 24,
+          border: 'none',
+          borderTop: '1px solid #e2e8f0'
+        }}
+      />
       <Footer />
     </>
   )

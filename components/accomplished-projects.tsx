@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Flex, Text, Heading, Box, Image, Link } from '@chakra-ui/core';
-import { useRouter } from 'next/router';
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import React, { useState, useEffect } from 'react'
+import { Flex, Text, Heading, Box, Image, Link } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
+import { Carousel } from 'react-responsive-carousel'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
-const CarouselComponent = Carousel as unknown as React.FC<any>;
+const CarouselComponent = Carousel as unknown as React.FC<any>
 
 const AccomplishedProjects: React.FC = () => {
-  const router = useRouter();
-  const [slidesToShow, setSlidesToShow] = useState(3);
+  const router = useRouter()
+  const [slidesToShow, setSlidesToShow] = useState(3)
 
   const projects = [
     { src: '/projects/Picture27.jpg', alt: 'Accomplished Project 1' },
@@ -16,21 +16,21 @@ const AccomplishedProjects: React.FC = () => {
     { src: '/projects/Picture25.jpg', alt: 'Accomplished Project 3' },
     { src: '/projects/Picture23.jpg', alt: 'Accomplished Project 4' },
     { src: '/projects/Picture12.jpg', alt: 'Accomplished Project 5' },
-    { src: '/projects/villa3.jpg', alt: 'Accomplished Project 6' },
-  ];
+    { src: '/projects/villa3.jpg', alt: 'Accomplished Project 6' }
+  ]
 
   // Handle responsive slides
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) setSlidesToShow(1);
-      else setSlidesToShow(3);
-    };
+      if (window.innerWidth < 768) setSlidesToShow(1)
+      else setSlidesToShow(3)
+    }
 
-    handleResize(); // initial check
-    window.addEventListener('resize', handleResize);
+    handleResize() // initial check
+    window.addEventListener('resize', handleResize)
 
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <Box
@@ -68,7 +68,10 @@ const AccomplishedProjects: React.FC = () => {
           textAlign="center"
           color="gray.600"
         >
-          Our completed projects demonstrate our commitment to quality and client satisfaction. From residential to commercial builds, each project highlights our expertise and dedication to delivering exceptional results.
+          Our completed projects demonstrate our commitment to quality and
+          client satisfaction. From residential to commercial builds, each
+          project highlights our expertise and dedication to delivering
+          exceptional results.
         </Text>
 
         <Box width="100%" mb={12}>
@@ -101,7 +104,7 @@ const AccomplishedProjects: React.FC = () => {
                   css={{
                     transform: 'translateY(-4px)',
                     boxShadow:
-                      '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                      '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
                   }}
                 >
                   <Image
@@ -138,7 +141,7 @@ const AccomplishedProjects: React.FC = () => {
 
         <Link
           onClick={() => router.push('/accomplished')}
-          display={["none", "none", "inline-flex"]}
+          display={['none', 'none', 'inline-flex']}
           px={3}
           py={3}
           bg="blue.500"
@@ -153,14 +156,14 @@ const AccomplishedProjects: React.FC = () => {
             bg: 'blue.600',
             transform: 'translateY(-2px)',
             boxShadow:
-              '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+              '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
           }}
         >
           View All Projects
         </Link>
       </Flex>
     </Box>
-  );
-};
+  )
+}
 
-export default AccomplishedProjects;
+export default AccomplishedProjects

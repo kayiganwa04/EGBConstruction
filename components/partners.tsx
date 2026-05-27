@@ -1,8 +1,7 @@
 import React from 'react'
-import { Box, Flex, Heading, Text, Image, Grid } from '@chakra-ui/core'
-import Button from './button'
+import { Box, Flex, Heading, Image } from '@chakra-ui/react'
 
-const Partners: React.FC = () => {
+const Partners = () => {
   return (
     <Flex
       flexDirection="column"
@@ -29,24 +28,15 @@ const Partners: React.FC = () => {
         width="100%"
         px="8"
       >
-        <Box marginRight={["0", "0", "0", "18px"]}>
+        <Box marginRight={['0', '0', '0', '18px']}>
           <Image
             src="/projects/partner1.png"
-            display={["block", "block", "block", "block"]}
+            display={['block', 'block', 'block', 'block']}
             borderRadius="5px"
-            maxW={["100%", "400px", "400px", "400px"]}
+            maxW={['100%', '400px', '400px', '400px']}
             width="100%"
           />
         </Box>
-{/* <Box>
-  <Image
-    src="/projects/partner2.png"
-    display={['none', 'none', 'none', 'block']}
-    borderRadius="5px"
-    maxW="400px"
-    width="100%"
-  />
-</Box> */}
       </Flex>
     </Flex>
   )

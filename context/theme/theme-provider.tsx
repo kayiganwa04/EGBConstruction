@@ -1,17 +1,13 @@
-import React from 'react';
-import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming';
-import { CSSReset } from '@chakra-ui/core';
-import customTheme from '../../styles/theme';
+import React from 'react'
+import { ChakraProvider } from '@chakra-ui/react'
+import customTheme from '../../styles/theme'
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
 const CustomThemeProvider = ({ children }: Props) => (
-  <EmotionThemeProvider theme={customTheme}>
-    <CSSReset />
-    {children}
-  </EmotionThemeProvider>
-);
+  <ChakraProvider value={customTheme}>{children}</ChakraProvider>
+)
 
-export default CustomThemeProvider; 
+export default CustomThemeProvider

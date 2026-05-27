@@ -1,13 +1,17 @@
 import React from 'react'
-import { Flex, Grid, Heading, Box } from '@chakra-ui/core'
+import { Flex, Grid, Heading, Box } from '@chakra-ui/react'
 
 const Header: React.FC = () => {
   return (
     <>
       <style jsx global>{`
         @keyframes zoom {
-          0% { transform: scale(1); }
-          100% { transform: scale(1.1); }
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(1.1);
+          }
         }
         .header-background {
           position: absolute;
@@ -21,14 +25,14 @@ const Header: React.FC = () => {
           background-repeat: no-repeat;
           filter: brightness(0.7);
           z-index: 1;
-          // animation: zoom 20s infinite alternate;
-          // will-change: transform;
+          animation: zoom 20s infinite alternate;
+          will-change: transform;
         }
       `}</style>
-      <Box 
-        id="header" 
-        position="relative" 
-        height={['0vh', '60vh', '60vh', '70vh']} 
+      <Box
+        id="header"
+        position="relative"
+        minH={['21vh', '36vh', '40vh', '48vh']}
         overflow="hidden"
       >
         <div className="header-background" />
@@ -41,19 +45,27 @@ const Header: React.FC = () => {
           <Flex
             flexDirection="column"
             gridRow="3 / 3"
-            paddingX={['1.5em', '1.5em', '1.5em', '15%']}
+            paddingX={['1em', '1.5em', '1.5em', '15%']}
+            alignItems="flex-start"
           >
             <Heading
               as="h2"
-              fontSize={['4xl', '5xl', '6xl', '6xl', '6xl']}
+              fontSize="clamp(1rem, 4vw, 4.8rem)"
               color="white"
               bg="blue.500"
               mb="3"
-              width="fit-content"
-              paddingX={['4px', '12px', '12px', '16px', '24px']}
-              paddingY={['4px', '4px', '12px', '12px', '16px']}
+              width="100%"
+              maxW="100%"
+              paddingX={['11px', '13px', '17px', '21px', '25px']}
+              paddingY={['6px', '8px', '10px', '12px', '14px']}
               borderRadius="10px"
               textAlign="center"
+              lineHeight="1.1"
+              whiteSpace="nowrap"
+              overflow="hidden"
+              textOverflow="clip"
+              fontWeight="700"
+              letterSpacing="-0.02em"
             >
               Entreprise Générale du Bâtiment
             </Heading>
@@ -64,8 +76,11 @@ const Header: React.FC = () => {
               color="blue.500"
               bg="white"
               width="fit-content"
-              paddingX={['24px', '24px', '30px', '30px', '30px']}
-              paddingY={['8px', '8px', '14px', '14px', '14px']}
+              maxW="100%"
+              paddingX={['16px', '18px', '22px', '24px', '26px']}
+              paddingY={['4px', '6px', '8px', '9px', '10px']}
+              borderRadius="8px"
+              whiteSpace="nowrap"
             >
               Ideas & Inspirations
             </Heading>

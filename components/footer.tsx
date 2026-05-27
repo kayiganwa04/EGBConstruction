@@ -1,7 +1,7 @@
-import React from 'react';
-import { Text, Flex, Grid, Box } from '@chakra-ui/core';
-import { Divider } from '@chakra-ui/core';
-import Logo from './logo';
+import React from 'react'
+import { Text, Flex, Grid, Box } from '@chakra-ui/react'
+import { Separator } from '@chakra-ui/react'
+import Logo from './logo'
 
 const Footer: React.FC = () => {
   return (
@@ -22,7 +22,10 @@ const Footer: React.FC = () => {
         >
           <Logo />
           <Text fontSize="16px" mt="4" lineHeight="22px" color="black">
-            Our vision is to create modern, first-class interior spaces that not only enhance aesthetics but also improve functionality and user experience. We are dedicated to delivering excellence and sustainability in every project we undertake.
+            Our vision is to create modern, first-class interior spaces that not
+            only enhance aesthetics but also improve functionality and user
+            experience. We are dedicated to delivering excellence and
+            sustainability in every project we undertake.
           </Text>
         </Flex>
 
@@ -36,9 +39,15 @@ const Footer: React.FC = () => {
           <Text color="blue.500" fontWeight="bold" fontSize="20px" mb="8px">
             Projects
           </Text>
-          <Text mb="6px" color="black">Industrial building</Text>
-          <Text mb="6px" color="black">Housing and villas</Text>
-          <Text mb="6px" color="black" whiteSpace="nowrap">Luxury apartment</Text>
+          <Text mb="6px" color="black">
+            Industrial building
+          </Text>
+          <Text mb="6px" color="black">
+            Housing and villas
+          </Text>
+          <Text mb="6px" color="black" whiteSpace="nowrap">
+            Luxury apartment
+          </Text>
           <Text color="black">Our Shop</Text>
         </Flex>
 
@@ -54,16 +63,26 @@ const Footer: React.FC = () => {
             <Text color="blue.500" fontWeight="bold" fontSize="20px" mb="8px">
               Contact Us
             </Text>
-            <Text mb="6px" color="black">Address: Kicukiro, Kigali</Text>
-            <Text mb="6px" color="black">Office: +250 799 36 58 89</Text>
-            <Text mb="6px" color="black">Other Phone: +250 788 38 78 40</Text>
-            <Text color="black" whiteSpace="nowrap"><a href="mailto:bbouquin.egb@gmail.com">Email: bbouquin.egb@gmail.com</a></Text>
+            <Text mb="6px" color="black">
+              Address: Kicukiro, Kigali
+            </Text>
+            <Text mb="6px" color="black">
+              Office: +250 799 36 58 89
+            </Text>
+            <Text mb="6px" color="black">
+              Other Phone: +250 788 38 78 40
+            </Text>
+            <Text color="black" whiteSpace="nowrap">
+              <a href="mailto:bbouquin.egb@gmail.com">
+                Email: bbouquin.egb@gmail.com
+              </a>
+            </Text>
           </Flex>
 
           {/* Embedded Map */}
-          <Box width="80vmin" height="250px" >
+          <Box width="80vmin" height="250px">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1457.38165971484!2d30.10224694799836!3d-1.9792454168194091!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca7d1987f32a9%3A0xabf5afe74d060258!2sEGB%20construction!5e0!3m2!1sen!2srw!4v1748336426785!5m2!1sen!2srw" 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1457.38165971484!2d30.10224694799836!3d-1.9792454168194091!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca7d1987f32a9%3A0xabf5afe74d060258!2sEGB%20construction!5e0!3m2!1sen!2srw!4v1748336426785!5m2!1sen!2srw"
               width="100%"
               height="100%"
               style={{ border: 0, borderRadius: '8px' }}
@@ -72,19 +91,18 @@ const Footer: React.FC = () => {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </Box>
-
         </Grid>
       </Grid>
 
       {/* Bottom line and copyright */}
       <Box width="100%" px={['8', '8', '8']} mt="4">
-        <Divider height="1px" backgroundColor="gray.500" mb="8" />
+        <Separator height="1px" backgroundColor="gray.500" mb="8" />
         <Text textAlign="center" fontSize="sm" color="gray.600">
           © 2026 EGB Construction. All rights reserved.
         </Text>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

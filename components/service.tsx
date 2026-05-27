@@ -1,42 +1,43 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { Grid, Text, Flex, Heading, Button, Box, Image } from '@chakra-ui/core'
+import React from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { Grid, Text, Flex, Heading, Box, Image } from '@chakra-ui/react'
 
-const Service: React.FC = () => {
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+const Service = () => {
+  const [isAnimating, setIsAnimating] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsAnimating(true);
-          setHasAnimated(true);
-        } else if (entry.isIntersecting == null && entry.boundingClientRect.top > 0) {
-          setIsAnimating(false);
-          setHasAnimated(false);
+          setIsAnimating(true)
+        } else if (
+          entry.isIntersecting == null &&
+          entry.boundingClientRect.top > 0
+        ) {
+          setIsAnimating(false)
         }
       },
       {
         threshold: 0.1
       }
-    );
+    )
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+      observer.observe(sectionRef.current)
     }
 
     return () => {
       if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+        observer.unobserve(sectionRef.current)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   return (
     <Box id="service" position="relative" ref={sectionRef}>
       <Image
-        width={['0%', '0%', '0%', '45%', '80%']}
+        width={['0%', '0%', '0%', '45%', '45%']}
         position="absolute"
         top="8%"
         left="2%"
@@ -48,11 +49,11 @@ const Service: React.FC = () => {
         boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
         borderRadius="2px"
         style={{
-          transition: "all 0.9s ease-in-out",
-          transform: isAnimating ? "translateY(0)" : "translateY(200%)",
+          transition: 'all 0.9s ease-in-out',
+          transform: isAnimating ? 'translateY(0)' : 'translateY(200%)',
           opacity: isAnimating ? 1 : 0,
-          visibility: "visible",
-          willChange: "transform, opacity"
+          visibility: 'visible',
+          willChange: 'transform, opacity'
         }}
       />
       <Grid
@@ -73,7 +74,7 @@ const Service: React.FC = () => {
           <Heading
             as="h3"
             textTransform="uppercase"
-            fontSize={['3xl', '3xl', '5xl', '5xl', '5xl']}
+            fontSize={['3xl', '3xl', '4xl', '4xl', '4xl']}
             fontWeight="extrabold"
             mb="8px"
             alignSelf="flex-start"
@@ -104,7 +105,10 @@ const Service: React.FC = () => {
             textAlign="left"
             lineHeight="23px"
           >
-            Our vision is to create modern, first-class interior spaces that not only enhance aesthetics but also improve functionality and user experience. We are dedicated to delivering excellence and sustainability in every project we undertake.
+            Our vision is to create modern, first-class interior spaces that not
+            only enhance aesthetics but also improve functionality and user
+            experience. We are dedicated to delivering excellence and
+            sustainability in every project we undertake.
           </Text>
           <Heading
             as="h3"
@@ -121,10 +125,10 @@ const Service: React.FC = () => {
             textAlign="left"
             lineHeight="23px"
           >
-            We are driven by integrity, innovation, and a commitment to excellence
-            in every project. Our values reflect a dedication to quality, customer
-            satisfaction, and environmental responsibility, guiding our mission to
-            build a better tomorrow.
+            We are driven by integrity, innovation, and a commitment to
+            excellence in every project. Our values reflect a dedication to
+            quality, customer satisfaction, and environmental responsibility,
+            guiding our mission to build a better tomorrow.
           </Text>
         </Flex>
       </Grid>

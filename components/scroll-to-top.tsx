@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react'
-import { IconButton, Box } from '@chakra-ui/core'
+import React from 'react'
+import { useEffect, useState } from 'react'
+import { Button, Box } from '@chakra-ui/react'
 import { FiChevronUp } from 'react-icons/fi'
 
-const ScrollToTop: React.FC = () => {
+const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
 
-  // Show button when page is scrolled up to given distance
   const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
-      setIsVisible(true)
-    } else {
-      setIsVisible(false)
-    }
+    setIsVisible(window.pageYOffset > 300)
   }
 
-  // Set the scroll event listener
   useEffect(() => {
     window.addEventListener('scroll', toggleVisibility)
     return () => {
@@ -22,7 +17,6 @@ const ScrollToTop: React.FC = () => {
     }
   }, [])
 
-  // Scroll to top smoothly
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -42,9 +36,8 @@ const ScrollToTop: React.FC = () => {
           transform="translateY(0)"
           transition="all 0.3s ease-in-out"
         >
-          <IconButton
+          <Button
             aria-label="Scroll to top"
-            icon={FiChevronUp}
             onClick={scrollToTop}
             size="lg"
             variant="ghost"
@@ -68,7 +61,9 @@ const ScrollToTop: React.FC = () => {
             transition="all 0.3s ease"
             w="16"
             h="16"
-          />
+          >
+            <FiChevronUp />
+          </Button>
         </Box>
       )}
     </>

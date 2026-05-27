@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Heading, Image, Text } from '@chakra-ui/core'
+import { Flex, Heading, Image, Text } from '@chakra-ui/react'
 
 const DreamHome: React.FC = () => {
   return (
@@ -22,30 +22,69 @@ const DreamHome: React.FC = () => {
         maxW="1280px"
         mb="12"
       >
-        <Flex flexDirection="row" alignItems="center" maxW="380px" mb={['8', '8', '8', '0', '0']}>
-          <Image src="/icon/power-icon.png" alt="Power Icon" width="50px" height="50px" mr="18px" />
+        <Flex
+          flexDirection="row"
+          alignItems="center"
+          maxW="380px"
+          mb={['8', '8', '8', '0', '0']}
+        >
+          <Image
+            src="/icon/power-icon.png"
+            alt="Power Icon"
+            width="50px"
+            height="50px"
+            mr="18px"
+          />
           <Flex flexDirection="column" fontSize="xl">
             <Text fontWeight="bold">Architecture & Planning</Text>
-            <Text fontSize="sm">Innovative designs that combine form with function to create lasting structures.</Text>
+            <Text fontSize="sm">
+              Innovative designs that combine form with function to create
+              lasting structures.
+            </Text>
           </Flex>
         </Flex>
 
-        <Flex flexDirection="row" alignItems="center" maxW="380px" mb={['8', '8', '8', '0', '0']}>
-          <Image src="/icon/power-icon.png" alt="Power Icon" width="50px" height="50px" mr="18px" />
+        <Flex
+          flexDirection="row"
+          alignItems="center"
+          maxW="380px"
+          mb={['8', '8', '8', '0', '0']}
+        >
+          <Image
+            src="/icon/power-icon.png"
+            alt="Power Icon"
+            width="50px"
+            height="50px"
+            mr="18px"
+          />
           <Flex flexDirection="column" fontSize="xl">
             <Text fontWeight="bold">Civil Engineering</Text>
-            <Text fontSize="sm">Comprehensive civil solutions to support infrastructure growth.</Text>
+            <Text fontSize="sm">
+              Comprehensive civil solutions to support infrastructure growth.
+            </Text>
           </Flex>
         </Flex>
 
-        <Flex flexDirection="row" alignItems="center" maxW="380px" mb={['8', '8', '8', '0', '0']}>
-          <Image src="/icon/rocket-icon.png" alt="Rocket Icon" width="50px" height="50px" mr="18px" />
+        <Flex
+          flexDirection="row"
+          alignItems="center"
+          maxW="380px"
+          mb={['8', '8', '8', '0', '0']}
+        >
+          <Image
+            src="/icon/rocket-icon.png"
+            alt="Rocket Icon"
+            width="50px"
+            height="50px"
+            mr="18px"
+          />
           <Flex flexDirection="column" fontSize="xl">
             <Text fontWeight="bold">Structural Engineering</Text>
-            <Text fontSize="sm">Creating resilient structures that stand the test of time.</Text>
+            <Text fontSize="sm">
+              Creating resilient structures that stand the test of time.
+            </Text>
           </Flex>
         </Flex>
-
       </Flex>
 
       <Flex
@@ -56,33 +95,73 @@ const DreamHome: React.FC = () => {
         maxW="1280px"
         mb="12"
       >
-        <Flex flexDirection="row" alignItems="center" maxW="380px" mb={['8', '8', '8', '0', '0']}>
-          <Image src="/icon/power-icon.png" alt="Power Icon" width="50px" height="50px" mr="18px" />
+        <Flex
+          flexDirection="row"
+          alignItems="center"
+          maxW="380px"
+          mb={['8', '8', '8', '0', '0']}
+        >
+          <Image
+            src="/icon/power-icon.png"
+            alt="Power Icon"
+            width="50px"
+            height="50px"
+            mr="18px"
+          />
           <Flex flexDirection="column" fontSize="xl">
             <Text fontWeight="bold">Mechanical Engineering</Text>
-            <Text fontSize="sm">Precision-driven mechanical solutions for industrial applications.</Text>
+            <Text fontSize="sm">
+              Precision-driven mechanical solutions for industrial applications.
+            </Text>
           </Flex>
         </Flex>
 
-        <Flex flexDirection="row" alignItems="center" maxW="380px" mb={['8', '8', '8', '0', '0']}>
-          <Image src="/icon/rocket-icon.png" alt="Rocket Icon" width="50px" height="50px" mr="18px" />
+        <Flex
+          flexDirection="row"
+          alignItems="center"
+          maxW="380px"
+          mb={['8', '8', '8', '0', '0']}
+        >
+          <Image
+            src="/icon/rocket-icon.png"
+            alt="Rocket Icon"
+            width="50px"
+            height="50px"
+            mr="18px"
+          />
           <Flex flexDirection="column" fontSize="xl">
             <Text fontWeight="bold">Project Management</Text>
-            <Text fontSize="sm">Coordinating resources and timelines for seamless project execution.</Text>
+            <Text fontSize="sm">
+              Coordinating resources and timelines for seamless project
+              execution.
+            </Text>
           </Flex>
         </Flex>
 
-        <Flex flexDirection="row" alignItems="center" maxW="380px" mb={['8', '8', '8', '0', '0']}>
-          <Image src="/icon/power-icon.png" alt="Power Icon" width="50px" height="50px" mr="18px" />
+        <Flex
+          flexDirection="row"
+          alignItems="center"
+          maxW="380px"
+          mb={['8', '8', '8', '0', '0']}
+        >
+          <Image
+            src="/icon/power-icon.png"
+            alt="Power Icon"
+            width="50px"
+            height="50px"
+            mr="18px"
+          />
           <Flex flexDirection="column" fontSize="xl">
             <Text fontWeight="bold">Consulting</Text>
-            <Text fontSize="sm">Providing expert guidance across various engineering disciplines.</Text>
+            <Text fontSize="sm">
+              Providing expert guidance across various engineering disciplines.
+            </Text>
           </Flex>
         </Flex>
-  </Flex>
+      </Flex>
 
-  {/* <Button>Get In Touch</Button> */}
-</Flex>
+      {/* <Button>Get In Touch</Button> */}
+    </Flex>
   )
 }
 

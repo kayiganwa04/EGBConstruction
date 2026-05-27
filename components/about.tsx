@@ -1,37 +1,37 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Box, Flex, Heading, Text, Image, Grid } from '@chakra-ui/core'
+import { Box, Flex, Heading, Text, Image, Grid } from '@chakra-ui/react'
 import Button from './button'
 
 const About: React.FC = () => {
-  const [isAnimating, setIsAnimating] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isAnimating, setIsAnimating] = useState(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         // Reset animation state when section goes out of view
         if (entry.isIntersecting == null) {
-          setIsAnimating(false);
+          setIsAnimating(false)
         } else {
           // Trigger animation when section comes into view
-          setIsAnimating(true);
+          setIsAnimating(true)
         }
       },
       {
         threshold: 0.05 // Trigger when 10% of the section is visible
       }
-    );
+    )
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+      observer.observe(sectionRef.current)
     }
 
     return () => {
       if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+        observer.unobserve(sectionRef.current)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   return (
     <Box id="about" ref={sectionRef}>
@@ -56,26 +56,41 @@ const About: React.FC = () => {
             About us
           </Heading>
           <Text fontSize="md" mb="20px" alignSelf="flex-start" textAlign="left">
-            Entreprise Générale du Bâtiment (EGB Ltd) is a distinguished construction company based in Kigali, Rwanda. Established in 2014 by Mr. Bouquin Bonaventure, a civil engineering expert who trained in France, EGB Ltd has consistently delivered exceptional building and utility construction projects throughout Rwanda. Mr. Bonaventure's commitment to Rwanda's construction sector began in 2012, bringing international expertise to the region and actively creating jobs.
-
-            EGB Ltd initially focused on site supervision and house rehabilitation but quickly expanded its services to include the construction of residential homes, luxury apartments, villas, factories, and warehouses. Our expertise spans industrial and residential buildings, office construction, villa and apartment development, civil engineering, landscaping, and architectural design. Additionally, we offer consulting, supervision, and maintenance services, ensuring the longevity and quality of each project.
-
-            Our technical team includes certified engineers, skilled electricians, plumbers, painters, and interior designers. We uphold values of integrity, professionalism, teamwork, and accountability, aiming to be the preferred choice for engineering and construction services in Rwanda.
+            Entreprise Générale du Bâtiment (EGB Ltd) is a distinguished
+            construction company based in Kigali, Rwanda. Established in 2014 by
+            Mr. Bouquin Bonaventure, a civil engineering expert who trained in
+            France, EGB Ltd has consistently delivered exceptional building and
+            utility construction projects throughout Rwanda. Mr. Bonaventure's
+            commitment to Rwanda's construction sector began in 2012, bringing
+            international expertise to the region and actively creating jobs.
+            EGB Ltd initially focused on site supervision and house
+            rehabilitation but quickly expanded its services to include the
+            construction of residential homes, luxury apartments, villas,
+            factories, and warehouses. Our expertise spans industrial and
+            residential buildings, office construction, villa and apartment
+            development, civil engineering, landscaping, and architectural
+            design. Additionally, we offer consulting, supervision, and
+            maintenance services, ensuring the longevity and quality of each
+            project. Our technical team includes certified engineers, skilled
+            electricians, plumbers, painters, and interior designers. We uphold
+            values of integrity, professionalism, teamwork, and accountability,
+            aiming to be the preferred choice for engineering and construction
+            services in Rwanda.
           </Text>
         </Flex>
-        <Box 
-          gridColumn="4 / 7" 
-          style={{ 
-            borderRadius: "2px",
-            transition: "all 0.8s ease-in-out",
-            transform: isAnimating ? "translateX(0)" : "translateX(100%)",
+        <Box
+          gridColumn="4 / 7"
+          style={{
+            borderRadius: '2px',
+            transition: 'all 0.8s ease-in-out',
+            transform: isAnimating ? 'translateX(0)' : 'translateX(100%)',
             opacity: isAnimating ? 1 : 0,
-            visibility: "visible",
-            position: "relative",
-            border: "2px solid #222020ff",
-            marginRight: "13px",
-            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-            willChange: "transform, opacity"
+            visibility: 'visible',
+            position: 'relative',
+            border: '2px solid #222020ff',
+            marginRight: '13px',
+            boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+            willChange: 'transform, opacity'
           }}
         >
           <Image
@@ -84,10 +99,10 @@ const About: React.FC = () => {
             borderRadius="2px"
             width="100vi"
             style={{
-              transition: "transform 0.3s ease-in-out"
+              transition: 'transform 0.3s ease-in-out'
             }}
-            onMouseOver={(e) => e.currentTarget.style.transform = "scale(1)"}
-            onMouseOut={(e) => e.currentTarget.style.transform = "scale(1)"}
+            onMouseOver={e => (e.currentTarget.style.transform = 'scale(1)')}
+            onMouseOut={e => (e.currentTarget.style.transform = 'scale(1)')}
           />
         </Box>
       </Grid>

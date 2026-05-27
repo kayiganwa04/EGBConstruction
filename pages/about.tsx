@@ -8,7 +8,7 @@ import Service from '../components/service'
 import Footer from '../components/footer'
 import AccomplishedPojects from '../components/accomplished-projects'
 import OnGoingProjects from '../components/ongoing-projects'
-import { Divider } from '@chakra-ui/core'
+import { Separator } from '@chakra-ui/react'
 
 const AboutPage: React.FC = () => {
   useEffect(() => {
@@ -16,7 +16,8 @@ const AboutPage: React.FC = () => {
     if (el) {
       const navbar = document.querySelector('nav')
       const navbarHeight = navbar ? navbar.clientHeight : 70
-      const targetPosition = el.getBoundingClientRect().top + window.pageYOffset - navbarHeight
+      const targetPosition =
+        el.getBoundingClientRect().top + window.pageYOffset - navbarHeight
       window.scrollTo({ top: targetPosition, behavior: 'smooth' })
     }
   }, [])
@@ -31,7 +32,7 @@ const AboutPage: React.FC = () => {
       <Service />
       <AccomplishedPojects />
       <OnGoingProjects />
-      <Divider mt="24" />
+      <Separator mt="24" />
       <Footer />
     </>
   )

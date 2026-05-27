@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { Box, SimpleGrid, Image, Heading, Text, Flex, Modal, ModalOverlay, ModalContent, ModalBody, ModalCloseButton, Button } from '@chakra-ui/core'
+import {
+  Box,
+  SimpleGrid,
+  Image,
+  Heading,
+  Text,
+  Flex,
+  Button
+} from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 
 const OngoingGallery: React.FC = () => {
@@ -34,26 +42,23 @@ const OngoingGallery: React.FC = () => {
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (!selectedImage) return;
+      if (!selectedImage) return
 
       if (event.key === 'ArrowLeft') {
-        handlePrevious();
+        handlePrevious()
       } else if (event.key === 'ArrowRight') {
-        handleNext();
+        handleNext()
       }
-    };
+    }
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown)
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [selectedImage, currentIndex]);
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [selectedImage, currentIndex])
 
   return (
-    <Box
-      minH="100vh"
-      bg="linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%)"
-    >
+    <Box minH="100vh" bg="linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%)">
       <Box
         bg="blue.600"
         w="100%"
@@ -64,11 +69,11 @@ const OngoingGallery: React.FC = () => {
         position="relative"
         zIndex={1}
       >
-        <Flex 
-          flexDirection="column" 
-          alignItems="center" 
-          maxW="1400px" 
-          mx="auto" 
+        <Flex
+          flexDirection="column"
+          alignItems="center"
+          maxW="1400px"
+          mx="auto"
           px={[4, 6, 8, 10]}
         >
           <Heading
@@ -88,7 +93,9 @@ const OngoingGallery: React.FC = () => {
             color="white"
             lineHeight="tall"
           >
-            Our ongoing projects reflect our commitment to progress and excellence. Each is a testament to our dedication to delivering quality work that meets our clients' evolving needs.
+            Our ongoing projects reflect our commitment to progress and
+            excellence. Each is a testament to our dedication to delivering
+            quality work that meets our clients' evolving needs.
           </Text>
         </Flex>
       </Box>
@@ -103,7 +110,7 @@ const OngoingGallery: React.FC = () => {
         position="relative"
         zIndex={0}
       >
-        <SimpleGrid columns={[1, 2]} spacing={8} width="100%">
+        <SimpleGrid columns={[1, 2]} gap={8} width="100%">
           {projects.map((project, index) => (
             <Box
               key={index}
@@ -118,23 +125,23 @@ const OngoingGallery: React.FC = () => {
               css={{
                 '&:hover': {
                   transform: 'translateY(-4px)',
-                  boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                },
+                  boxShadow:
+                    '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
+                }
               }}
             >
               <Image
                 src={project.src}
                 alt={project.alt}
                 objectFit="cover"
-
                 w="100%"
                 h="100%"
                 loading="lazy"
                 transition="transform 0.3s ease"
                 css={{
                   '&:hover': {
-                    transform: 'scale(1.05)',
-                  },
+                    transform: 'scale(1.05)'
+                  }
                 }}
               />
               <Box
@@ -149,8 +156,8 @@ const OngoingGallery: React.FC = () => {
                 transition="transform 0.3s ease"
                 css={{
                   '&:hover': {
-                    transform: 'translateY(0)',
-                  },
+                    transform: 'translateY(0)'
+                  }
                 }}
               >
                 <Text fontSize="sm" fontWeight="medium">
@@ -173,73 +180,102 @@ const OngoingGallery: React.FC = () => {
           textTransform="uppercase"
           letterSpacing="wide"
           transition="all 0.2s"
-          _hover={{ bg: 'blue.600', transform: 'translateY(-2px)', textDecoration: 'none' }}
+          _hover={{
+            bg: 'blue.600',
+            transform: 'translateY(-2px)',
+            textDecoration: 'none'
+          }}
         >
           Go Back
         </Button>
 
-        <Modal isOpen={!!selectedImage} onClose={() => setSelectedImage(null)} size="full" isCentered>
-          <ModalOverlay bg="blackAlpha.900" />
-          <ModalContent bg="transparent" boxShadow="none" maxH="90vh" mx={4}>
-            <ModalCloseButton color="white" zIndex={2} />
-            <ModalBody p={0} position="relative" display="flex" alignItems="center" justifyContent="center" maxH="85vh">
-              {selectedImage && (
-                <>
-                  <Image
-                    src={selectedImage}
-                    alt="Selected project"
-                    maxW="100%"
-                    maxH="85vh"
-                    objectFit="contain"
-                  />
-                  <Button
-                    aria-label="Previous image"
-                    position="absolute"
-                    left="4"
-                    top="50%"
-                    transform="translateY(-50%)"
-                    onClick={handlePrevious}
-                    bg="gray.600"
-                    color="white"
-                    _hover={{ bg: 'blackAlpha.800' }}
-                    size="lg"
-                    fontSize="2xl"
-                    fontWeight="bold"
-                    borderRadius="full"
-                    w="50px"
-                    h="50px"
-                    p={1}
-                  >
-                    ←
-                  </Button>
-                  <Button
-                    aria-label="Next image"
-                    position="absolute"
-                    right="4"
-                    top="50%"
-                    transform="translateY(-50%)"
-                    onClick={handleNext}
-                    bg="blackAlpha.600"
-                    color="white"
-                    _hover={{ bg: 'blackAlpha.800' }}
-                    size="lg"
-                    fontSize="2xl"
-                    fontWeight="bold"
-                    borderRadius="full"
-                    w="50px"
-                    h="50px"
-                    p={0}
-                  >
-                    →
-                  </Button>
-                </>
-              )}
-            </ModalBody>
-          </ModalContent>
-        </Modal>
+        {selectedImage && (
+          <Box
+            position="fixed"
+            top="0"
+            left="0"
+            right="0"
+            bottom="0"
+            bg="blackAlpha.900"
+            zIndex={1200}
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            px={4}
+          >
+            <Button
+              aria-label="Close dialog"
+              position="absolute"
+              top="4"
+              right="4"
+              zIndex={2}
+              bg="transparent"
+              color="white"
+              _hover={{ bg: 'whiteAlpha.300' }}
+              onClick={() => setSelectedImage(null)}
+            >
+              ×
+            </Button>
+            <Box
+              position="relative"
+              maxH="85vh"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Image
+                src={selectedImage}
+                alt="Selected project"
+                maxW="100%"
+                maxH="85vh"
+                objectFit="contain"
+              />
+              <Button
+                aria-label="Previous image"
+                position="absolute"
+                left="4"
+                top="50%"
+                transform="translateY(-50%)"
+                onClick={handlePrevious}
+                bg="gray.600"
+                color="white"
+                _hover={{ bg: 'blackAlpha.800' }}
+                size="lg"
+                fontSize="2xl"
+                fontWeight="bold"
+                borderRadius="full"
+                w="50px"
+                h="50px"
+                p={1}
+              >
+                ←
+              </Button>
+              <Button
+                aria-label="Next image"
+                position="absolute"
+                right="4"
+                top="50%"
+                transform="translateY(-50%)"
+                onClick={handleNext}
+                bg="blackAlpha.600"
+                color="white"
+                _hover={{ bg: 'blackAlpha.800' }}
+                size="lg"
+                fontSize="2xl"
+                fontWeight="bold"
+                borderRadius="full"
+                w="50px"
+                h="50px"
+                p={0}
+              >
+                →
+              </Button>
+            </Box>
+          </Box>
+        )}
       </Flex>
     </Box>
   )
 }
 
-export default OngoingGallery 
+export default OngoingGallery

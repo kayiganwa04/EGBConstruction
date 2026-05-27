@@ -9,7 +9,7 @@ import Footer from '../components/footer'
 import AccomplishedPojects from '../components/accomplished-projects'
 import OnGoingProjects from '../components/ongoing-projects'
 import CreativeDirector from '../components/creative-director'
-import { Divider } from '@chakra-ui/core'
+import { Separator } from '@chakra-ui/react'
 
 const Home: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
       {/* <CreativeDirector /> */}
       <AccomplishedPojects />
       <OnGoingProjects />
-      <Divider mt="24" />
+      <Separator mt="24" />
       <Footer />
     </>
   )
