@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2020",
-    "module": "esnext",
+    "module": "Node16",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -19,7 +19,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node16"
   },
   "include": [
     "./**/*"
