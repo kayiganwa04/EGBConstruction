@@ -14,7 +14,8 @@ const OngoingProjects: React.FC = () => {
   const projects = [
     { src: '/projects/estate1.png', alt: 'Ongoing Project 1' },
     { src: '/projects/hospital1.jpeg', alt: 'Ongoing Project 4' },
-    { src: '/projects/Miduha_rendering.jpeg', alt: 'Ongoing Project 8' }
+    { src: '/projects/Miduha_rendering.jpeg', alt: 'Ongoing Project 8' },
+    { src: '/projects/BOH.avif', alt: 'Ongoing Project 9' }
   ]
   const [slidesToShow, setSlidesToShow] = React.useState(3)
   useEffect(() => {
