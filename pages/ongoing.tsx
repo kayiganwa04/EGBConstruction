@@ -23,7 +23,7 @@ const OngoingGallery: React.FC = () => {
     { src: '/projects/Miduha_rendering.jpeg', alt: 'Miduha Design' },
     { src: '/projects/miduha_reality.jpeg', alt: 'Miduha Reality' },
     { src: '/projects/TheOne.avif', alt: 'The One' },
-    { src: '/projects/BOH.jpeg', alt: 'Progress' },
+    { src: '/projects/BOH.jpeg', alt: 'Under Construction' },
   ]
   const handleImageClick = (src: string) => {
     const index = projects.findIndex(project => project.src === src)
